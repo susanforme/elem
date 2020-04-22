@@ -1,6 +1,6 @@
 <template>
   <div>
-    home
+    order
   </div>
 </template>
 

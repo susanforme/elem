@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <router-view />
-    <h1 class="he">sdsa</h1>
   </div>
 </template>
 
@@ -21,8 +20,4 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-h1 {
-  color: @primary;
-}
-</style>
+<style lang="less" scoped></style>
