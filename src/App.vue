@@ -21,3 +21,7 @@ export default {
 </script>
 
 <style lang="less" scoped></style>
+
+<style lang="less">
+@import url('~@/assets/base.less');
+</style>
