@@ -16,8 +16,8 @@ export default {};
   display: flex;
   position: fixed;
   background-color: red;
-  height: 4.7368rem;
   width: 100%;
   bottom: 0;
+  height: 13.333333vw;
 }
 </style>
