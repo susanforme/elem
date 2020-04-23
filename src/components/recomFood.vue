@@ -81,5 +81,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
   width: 96vw;
+  padding-top: 1vw;
 }
 </style>

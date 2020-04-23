@@ -4,7 +4,7 @@
       <font-awesome-icon icon="map-marker-alt" />
       {{ location }}
     </div>
-    <div class="btn-father" style="position:fixed;top:0">
+    <div class="btn-father" :class="{ fixed: isFixed }">
       <div class="btn" @click="jump">{{ data.placeholder }}</div>
     </div>
   </div>
@@ -23,7 +23,17 @@ export default {
     },
   },
   computed: {
-    ...mapState(['location']),
+    isFixed() {
+      console.log();
+      if (
+        this.currentPosition >
+        (document.documentElement.clientWidth / 100) * 11.5
+      ) {
+        return true;
+      }
+      return false;
+    },
+    ...mapState(['location', 'currentPosition']),
   },
 };
 </script>
@@ -32,24 +42,28 @@ export default {
 .head {
   background-image: linear-gradient(90deg, #0af, #0085ff);
   height: 23vw;
-  width: 92vw;
-  padding: 1.5vw 4vw;
+  width: 100vw;
   .top {
     color: white;
     font-weight: 700;
     height: 8vw;
     line-height: 8vw;
     font-size: 0.96rem;
+    padding: 1.5vw 4vw;
     padding-top: 2vw;
   }
   .btn-father {
-    width: 100%;
+    width: 92vw;
     position: relative;
-    top: 2.3vw;
+    height: 12vw;
+    background-image: linear-gradient(90deg, #0af, #0085ff);
+    padding: 1.5vw 4vw;
+    padding-bottom: 0.1vw;
+    z-index: 10;
     .btn {
       height: 10vw;
       line-height: 10vw;
-      width: 100%;
+      width: 100%-2 * 1vw;
       box-sizing: border-box;
       border: none;
       background-color: white;
@@ -59,6 +73,12 @@ export default {
       color: rgba(0, 0, 0, 0.212);
       font-size: 0.8533333333333334rem;
     }
+  }
+  .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
   }
 }
 </style>

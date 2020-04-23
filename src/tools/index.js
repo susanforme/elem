@@ -6,7 +6,7 @@ export function debounceFactory(delay) {
   let timer = null;
   return (callback) => {
     clearTimeout(timer);
-    setTimeout(() => {
+    timer = setTimeout(() => {
       callback();
     }, delay);
   };
@@ -21,6 +21,7 @@ export function throttleFactory(delay) {
     let nowTime = Date.now();
     if (nowTime - preTime > delay) {
       callback();
+      preTime = nowTime;
     }
   };
 }
