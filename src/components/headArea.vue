@@ -35,15 +35,12 @@ export default {
   width: 92vw;
   padding: 1.5vw 4vw;
   .top {
-    width: 90vw;
     color: white;
     font-weight: 700;
-    height: 10vw;
-    line-height: 10vw;
+    height: 8vw;
+    line-height: 8vw;
     font-size: 0.96rem;
     padding-top: 2vw;
-    background-image: linear-gradient(90deg, #0af, #0085ff);
-    padding: 1vw;
   }
   .btn-father {
     width: 100%;
