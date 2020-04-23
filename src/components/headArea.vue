@@ -1,6 +1,9 @@
 <template>
   <div class="head">
-    <div class="top">四川成都</div>
+    <div class="top">
+      <font-awesome-icon icon="map-marker-alt" />
+      {{ location }}
+    </div>
     <div class="btn-father">
       <div class="btn" @click="jump">{{ data.placeholder }}</div>
     </div>
@@ -8,6 +11,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   components: {},
   props: {
@@ -17,6 +21,9 @@ export default {
     jump: {
       type: Function,
     },
+  },
+  computed: {
+    ...mapState(['location']),
   },
 };
 </script>

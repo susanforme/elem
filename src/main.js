@@ -9,9 +9,10 @@ import {
   faCookie,
   faFileAlt,
   faUser,
+  faMapMarkerAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faCookie, faCompass, faFileAlt, faUser);
+library.add(faCookie, faCompass, faFileAlt, faUser, faMapMarkerAlt);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.config.productionTip = false;
