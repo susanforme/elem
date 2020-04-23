@@ -1,23 +1,67 @@
 <template>
   <div class="tabbar">
-    <font-awesome-icon icon="cookie" />
-    <font-awesome-icon icon="compass" />
-    <font-awesome-icon icon="file-alt" />
-    <font-awesome-icon icon="user" />
+    <router-link :to="bar.to" v-for="(bar, index) in bars" :key="index">
+      <font-awesome-icon :icon="bar.icon" />{{ bar.titile }}
+    </router-link>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      bars: [
+        { icon: 'cookie', titile: '首页', to: 'Home' },
+        { icon: 'compass', titile: '发现', to: 'Discover' },
+        { icon: 'file-alt', titile: '订单', to: 'Order' },
+        { icon: 'user', titile: '我的', to: 'User' },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="less" scoped>
 .tabbar {
   display: flex;
   position: fixed;
-  background-color: red;
   width: 100%;
   bottom: 0;
   height: 13.333333vw;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 -0.266667vw 0.533333vw rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  a {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.507);
+    height: 80%;
+    flex: 1;
+    text-decoration: none;
+    svg {
+      margin: 0 9vw;
+      font-size: 18px;
+      margin-bottom: 0.1vw;
+      color: rgba(0, 0, 0, 0.288);
+    }
+    &:active {
+      background-color: white;
+      outline: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+  .linkActiveClass {
+    color: #0089dc;
+    svg {
+      color: #0089dc;
+    }
+  }
 }
 </style>

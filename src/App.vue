@@ -10,7 +10,6 @@ import { debounceFactory } from './tools';
 export default {
   created() {
     const debounce = debounceFactory(100);
-    console.log(window.devicePixelRatio);
     window.addEventListener('resize', () => {
       debounce(() => {
         document.documentElement.style.fontSize =
