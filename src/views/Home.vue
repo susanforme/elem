@@ -2,6 +2,9 @@
   <div class="home">
     <head-area :data="{ placeholder }" :jump="jump"></head-area>
     <recom-food></recom-food>
+    <index-activity></index-activity>
+    <member-ad></member-ad>
+    <div class="test" style="height:200vw"></div>
     <main-tab-bar></main-tab-bar>
   </div>
 </template>
@@ -10,6 +13,8 @@
 import mainTabBar from '@/components/mainTabBar';
 import headArea from '@/components/headArea';
 import recomFood from '@/components/recomFood';
+import indexActivity from '@/components/indexActivity';
+import memberAd from '@/components/memberAd';
 export default {
   name: 'home',
   data() {
@@ -21,6 +26,8 @@ export default {
     mainTabBar,
     headArea,
     recomFood,
+    indexActivity,
+    memberAd,
   },
   methods: {
     jump() {
