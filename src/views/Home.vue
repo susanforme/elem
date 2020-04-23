@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <head-area :data="{ placeholder }" :jump="jump"></head-area>
+    <recom-food></recom-food>
     <main-tab-bar></main-tab-bar>
   </div>
 </template>
@@ -8,6 +9,7 @@
 <script>
 import mainTabBar from '@/components/mainTabBar';
 import headArea from '@/components/headArea';
+import recomFood from '@/components/recomFood';
 export default {
   name: 'home',
   data() {
@@ -18,6 +20,7 @@ export default {
   components: {
     mainTabBar,
     headArea,
+    recomFood,
   },
   methods: {
     jump() {

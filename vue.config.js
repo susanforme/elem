@@ -6,6 +6,7 @@ module.exports = {
         // `primary` is global variables fields name
         globalVars: {
           '@primary': '#0089dc',
+          '@padding': '2vw',
         },
       },
     },
