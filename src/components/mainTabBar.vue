@@ -39,14 +39,14 @@ export default {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    font-size: 10px;
+    font-size: 0.4266666666666667rem;
     color: rgba(0, 0, 0, 0.507);
     height: 80%;
     flex: 1;
     text-decoration: none;
     svg {
       margin: 0 9vw;
-      font-size: 18px;
+      font-size: 0.96rem;
       margin-bottom: 0.1vw;
       color: rgba(0, 0, 0, 0.288);
     }
@@ -58,9 +58,9 @@ export default {
     }
   }
   .linkActiveClass {
-    color: #0089dc;
+    color: @primary;
     svg {
-      color: #0089dc;
+      color: @primary;
     }
   }
 }

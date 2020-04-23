@@ -5,7 +5,7 @@ module.exports = {
       less: {
         // `primary` is global variables fields name
         globalVars: {
-          '@primary': '#fff',
+          '@primary': '#0089dc',
         },
       },
     },
