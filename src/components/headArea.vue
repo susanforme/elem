@@ -60,7 +60,6 @@ export default {
     background-image: linear-gradient(90deg, #0af, #0085ff);
     padding: 1.5vw 5%;
     padding-bottom: 0.1vw;
-    z-index: 10;
     .btn {
       height: 10vw;
       line-height: 10vw;

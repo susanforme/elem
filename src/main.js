@@ -2,6 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import animated from 'animate.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
@@ -10,11 +11,22 @@ import {
   faFileAlt,
   faUser,
   faMapMarkerAlt,
+  faAngleDown,
+  faFilter,
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faCookie, faCompass, faFileAlt, faUser, faMapMarkerAlt);
+library.add(
+  faCookie,
+  faCompass,
+  faFileAlt,
+  faUser,
+  faMapMarkerAlt,
+  faAngleDown,
+  faFilter
+);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
+Vue.use(animated);
 Vue.config.productionTip = false;
 
 new Vue({

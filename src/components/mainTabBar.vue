@@ -1,6 +1,11 @@
 <template>
   <div class="tabbar">
-    <router-link :to="bar.to" v-for="(bar, index) in bars" :key="index">
+    <router-link
+      :to="bar.to"
+      v-for="(bar, index) in bars"
+      :key="index"
+      :class="{ linkActiveClass: $route.name === bar.to }"
+    >
       <font-awesome-icon :icon="bar.icon" />{{ bar.titile }}
     </router-link>
   </div>
@@ -33,6 +38,7 @@ export default {
   background-color: white;
   box-shadow: 0 -0.266667vw 0.533333vw rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  z-index: 10;
   a {
     background-color: white;
     display: flex;

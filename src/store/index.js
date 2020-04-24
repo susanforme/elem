@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     location: '四川成都',
     currentPosition: 0,
+    isShowMask: false,
   },
   mutations: {
     changeLocation(state, newLocation) {
@@ -14,6 +15,9 @@ export default new Vuex.Store({
     },
     changeCurrentPosition(state, newPosition) {
       state.currentPosition = newPosition;
+    },
+    changeMaskStatus(state, newStatus) {
+      state.isShowMask = newStatus;
     },
   },
   actions: {},

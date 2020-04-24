@@ -4,7 +4,14 @@
     <recom-food></recom-food>
     <index-activity></index-activity>
     <member-ad></member-ad>
-    <div class="test" style="height:200vw"></div>
+    <recom-business></recom-business>
+    <transition
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
+    >
+      <div class="mask" v-if="isShowMask" @click="changeMask"></div>
+    </transition>
+    <div class="test" style="height:1000vw"></div>
     <main-tab-bar></main-tab-bar>
   </div>
 </template>
@@ -15,6 +22,9 @@ import headArea from '@/components/headArea';
 import recomFood from '@/components/recomFood';
 import indexActivity from '@/components/indexActivity';
 import memberAd from '@/components/memberAd';
+import recomBusiness from '@/components/recomBusiness';
+import { mapState, mapMutations } from 'vuex';
+
 export default {
   name: 'home',
   data() {
@@ -28,14 +38,39 @@ export default {
     recomFood,
     indexActivity,
     memberAd,
+    recomBusiness,
   },
   methods: {
     jump() {
       //跳转另一个页面
       console.log('我等会在跳转');
     },
+    ...mapMutations(['changeMaskStatus']),
+    changeMask() {
+      this.changeMaskStatus(false);
+      document.documentElement.style.overflow = '';
+    },
+  },
+  computed: {
+    ...mapState(['isShowMask']),
   },
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-backdrop-filter: blur(0.133333rem);
+  -webkit-backdrop-filter: blur(1.333333vw);
+  backdrop-filter: blur(0.133333rem);
+  backdrop-filter: blur(1.333333vw);
+}
+</style>

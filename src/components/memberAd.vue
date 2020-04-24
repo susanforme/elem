@@ -35,8 +35,8 @@ export default {
 .ad {
   padding: 0 @padding;
   background-color: white;
-  height: 15vw;
   padding-top: 1.2vw;
+  height: 10vw;
   .box {
     background-image: linear-gradient(90deg, #ffefc4, #f3dda0);
     width: 88%;
@@ -44,19 +44,19 @@ export default {
     padding: 1vw 6%;
     display: flex;
     p {
-      font-size: 13.125px;
+      font-size: 0.7rem;
       line-height: 8vw;
       font-weight: 700;
       color: rgba(85, 84, 84, 0.986);
       img {
-        width: 18px;
-        height: 18px;
-        margin-right: 5px;
-        margin-top: 6px;
+        width: 0.96rem;
+        height: 0.96rem;
+        margin-right: 0.26666666666666666rem;
+        margin-top: 0.32rem;
       }
     }
     span {
-      font-size: 12px;
+      font-size: 0.64rem;
       line-height: 8vw;
       color: rgba(1, 1, 1, 0.63);
       margin-left: 2vw;
