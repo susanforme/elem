@@ -35,7 +35,6 @@ export default {
 .ad {
   padding: 0 @padding;
   background-color: white;
-  width: 100vw-2 * @padding;
   height: 15vw;
   padding-top: 1.2vw;
   .box {

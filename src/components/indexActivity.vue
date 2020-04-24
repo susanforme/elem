@@ -30,7 +30,6 @@ export default {
 .activity {
   padding: 0 @padding;
   padding-top: 2vw;
-  width: 100vw-@padding*2;
   height: 30vw;
   background-color: white;
   overflow: hidden;

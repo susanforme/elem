@@ -42,22 +42,23 @@ export default {
 .head {
   background-image: linear-gradient(90deg, #0af, #0085ff);
   height: 23vw;
-  width: 100vw;
+  width: 100%;
   .top {
     color: white;
     font-weight: 700;
     height: 8vw;
     line-height: 8vw;
     font-size: 0.96rem;
-    padding: 1.5vw 4vw;
+    padding: 1.5vw 5%;
     padding-top: 2vw;
+    width: 90%;
   }
   .btn-father {
-    width: 92vw;
+    width: 90%;
     position: relative;
     height: 12vw;
     background-image: linear-gradient(90deg, #0af, #0085ff);
-    padding: 1.5vw 4vw;
+    padding: 1.5vw 5%;
     padding-bottom: 0.1vw;
     z-index: 10;
     .btn {
