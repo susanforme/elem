@@ -63,7 +63,6 @@ export default {
     .btn {
       height: 10vw;
       line-height: 10vw;
-      width: 100%-2 * 1vw;
       box-sizing: border-box;
       border: none;
       background-color: white;

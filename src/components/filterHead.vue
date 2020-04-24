@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     goDetail() {
-      const height = 108 * (document.documentElement.clientWidth / 100);
+      const height = 120 * (document.documentElement.clientWidth / 100);
       this.changeMaskStatus(true);
       document.documentElement.style.overflow = 'hidden';
       window.scrollTo(0, height);
