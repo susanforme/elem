@@ -1,12 +1,8 @@
 <template>
   <div class="filter" :class="{ fixed: isFixed }">
-    <div @click="goDetail">
+    <div @click="goDetail" :class="{ primary: isShowMask }">
       {{ sorts[index] }} <font-awesome-icon icon="angle-down" />
-      <div
-        v-show="isShowMask"
-        class="list anima"
-        :class="{ animation: isShowMask }"
-      >
+      <div class="list anima" :class="{ animation: isShowMask }">
         <ul>
           <li v-for="(sort, index) in sorts" :key="index">{{ sort }}</li>
         </ul>
@@ -37,8 +33,10 @@ export default {
   },
   methods: {
     goDetail() {
+      const height = 108 * (document.documentElement.clientWidth / 100);
       this.changeMaskStatus(true);
       document.documentElement.style.overflow = 'hidden';
+      window.scrollTo(0, height);
     },
     ...mapMutations(['changeMaskStatus']),
   },
@@ -46,7 +44,7 @@ export default {
     ...mapState(['currentPosition', 'isShowMask']),
     isFixed() {
       const height = 107.6 * (document.documentElement.clientWidth / 100);
-      if (this.currentPosition > height) {
+      if (this.currentPosition >= height) {
         return true;
       }
       return false;
@@ -60,7 +58,7 @@ export default {
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 14px;
+  font-size: 0.7466666666666667rem;
   height: 10vw;
   line-height: 10vw;
   z-index: 10;
@@ -85,20 +83,33 @@ export default {
   left: 0;
   right: 0;
   background-color: white;
-  padding: 0 @padding;
+  padding: 0 2 * @padding;
   z-index: 10;
   overflow: hidden;
   height: 0;
+  opacity: 0;
+  text-align: left;
+  border-top: 1px solid rgba(0, 0, 0, 0.082);
+  color: black;
   ul {
     li {
       list-style-type: none;
+      height: 10vw;
+      line-height: 10vw;
     }
   }
 }
 .anima {
-  transition: all 1s ease-in;
+  transition: all 0.5s ease-in;
 }
 .animation {
-  height: 80vw;
+  height: 70vw;
+  opacity: 1;
+}
+.primary {
+  color: @primary;
+  > svg {
+    color: @primary;
+  }
 }
 </style>

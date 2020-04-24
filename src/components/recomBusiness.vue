@@ -25,17 +25,17 @@ export default {
     line-height: 10vw;
     span {
       color: rgb(90, 87, 87);
-      font-size: 16px;
+      font-size: 0.8533333333333334rem;
       position: relative;
       &::before {
         content: '──';
         position: relative;
-        right: 10px;
+        right: 0.5333333333333333rem;
       }
       &::after {
         content: '──';
         position: relative;
-        left: 10px;
+        left: 0.5333333333333333rem;
       }
     }
   }
