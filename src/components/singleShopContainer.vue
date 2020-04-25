@@ -1,34 +1,36 @@
 <template>
-  <div class="shop">
-    <img :src="imgSrc" alt="" />
-    <div class="content">
-      <p class="title">{{ title }}</p>
-      <div class="score">
-        <span><stars :score="score"></stars> {{ score }}</span
-        ><span> 月售{{ sales }}单</span>
-      </div>
-      <p class="lowest-price">${{ lowestPrice }}起送 | {{ trueMsg }}</p>
-      <p class="description">
-        {{ description }}
-      </p>
-      <div class="right">
-        <p class="dislike">···</p>
-        <p class="dsitance">{{ distance }}m | {{ wasteTime }}分钟</p>
-      </div>
-      <div class="bottom">
-        <div class="b">
-          <div class="box1">减</div>
-          <p>
-            满{{ activities[0][0] }}元减{{ activities[0][1] }}元,满{{
-              activities[0][0] * 2
-            }}元减{{ activities[0][1] * 2.25 }}元,满{{
-              activities[0][0] * 3
-            }}元减{{ activities[0][1] * 3.5 }}元
-          </p>
+  <div class="shop-father">
+    <div class="shop">
+      <img :src="imgSrc" alt="" />
+      <div class="content">
+        <p class="title">{{ title }}</p>
+        <div class="score">
+          <span><stars :score="score"></stars> {{ score }}</span
+          ><span> 月售{{ sales }}单</span>
         </div>
-        <div class="b">
-          <div class="box2">配</div>
-          <p>配送费立减{{ activities[1] }}元</p>
+        <p class="lowest-price">${{ lowestPrice }}起送 | {{ trueMsg }}</p>
+        <p class="description">
+          {{ description }}
+        </p>
+        <div class="right">
+          <p class="dislike">···</p>
+          <p class="dsitance">{{ distance }}m | {{ wasteTime }}分钟</p>
+        </div>
+        <div class="bottom">
+          <div class="b">
+            <div class="box1">减</div>
+            <p>
+              满{{ activities[0][0] }}元减{{ activities[0][1] }}元,满{{
+                activities[0][0] * 2
+              }}元减{{ activities[0][1] * 2.25 }}元,满{{
+                activities[0][0] * 3
+              }}元减{{ activities[0][1] * 3.5 }}元
+            </p>
+          </div>
+          <div class="b">
+            <div class="box2">配</div>
+            <p>配送费立减{{ activities[1] }}元</p>
+          </div>
         </div>
       </div>
     </div>
