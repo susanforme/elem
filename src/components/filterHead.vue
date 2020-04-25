@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapMutations } from 'vuex';
 export default {
   data() {
     return {
@@ -33,21 +33,19 @@ export default {
   },
   methods: {
     goDetail() {
-      const height = 120 * (document.documentElement.clientWidth / 100);
+      const height = 108 * (document.documentElement.clientWidth / 100);
       this.changeMaskStatus(true);
       document.documentElement.style.overflow = 'hidden';
       window.scrollTo(0, height);
     },
     ...mapMutations(['changeMaskStatus']),
   },
-  computed: {
-    ...mapState(['currentPosition', 'isShowMask']),
-    isFixed() {
-      const height = 107.6 * (document.documentElement.clientWidth / 100);
-      if (this.currentPosition >= height) {
-        return true;
-      }
-      return false;
+  props: {
+    isFixed: {
+      type: Boolean,
+    },
+    isShowMask: {
+      type: Boolean,
     },
   },
 };
@@ -61,7 +59,6 @@ export default {
   font-size: 0.7466666666666667rem;
   height: 10vw;
   line-height: 10vw;
-  z-index: 10;
   > div {
     flex: 1;
   }
@@ -76,6 +73,7 @@ export default {
   right: 0;
   background-color: white;
   padding: 0 @padding;
+  z-index: 10;
 }
 .list {
   position: fixed;

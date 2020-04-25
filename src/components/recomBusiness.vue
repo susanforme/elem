@@ -1,16 +1,28 @@
 <template>
   <div class="recom">
     <div class="ad"><span> 推荐商家</span></div>
-    <filter-header></filter-header>
+    <filter-header :isFixed="isFixed" :isShowMask="isShowMask"></filter-header>
+    <div class="add-position" v-if="isFixed"></div>
   </div>
 </template>
 
 <script>
 import filterHeader from './filterHead';
+import { mapState } from 'vuex';
 
 export default {
   components: {
     filterHeader,
+  },
+  computed: {
+    ...mapState(['currentPosition', 'isShowMask']),
+    isFixed() {
+      const height = 107.6 * (document.documentElement.clientWidth / 100);
+      if (this.currentPosition >= height) {
+        return true;
+      }
+      return false;
+    },
   },
 };
 </script>
@@ -38,6 +50,9 @@ export default {
         left: 0.5333333333333333rem;
       }
     }
+  }
+  .add-position {
+    height: 10vw;
   }
 }
 </style>
