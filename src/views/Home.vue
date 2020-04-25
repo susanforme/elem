@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home></home>
+    <home :homeData="homeData" :location="location"></home>
   </div>
 </template>
 
@@ -11,6 +11,7 @@ import axios from '@/api';
 
 const { mapMutations, mapState, mapActions } = createNamespacedHelpers('home');
 export default {
+  name: 'homeView',
   components: {
     home,
   },
@@ -46,7 +47,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['data', 'status']),
+    ...mapState(['homeData', 'location', 'status']),
   },
 };
 </script>

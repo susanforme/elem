@@ -18,9 +18,15 @@ export default {
   props: {
     data: {
       type: Object,
+      required: true,
     },
     jump: {
       type: Function,
+      required: true,
+    },
+    location: {
+      type: String,
+      required: true,
     },
   },
   computed: {
@@ -34,7 +40,7 @@ export default {
       }
       return false;
     },
-    ...mapState(['location', 'currentPosition']),
+    ...mapState(['currentPosition']),
   },
 };
 </script>

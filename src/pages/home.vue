@@ -1,7 +1,11 @@
 <template>
   <div class="home">
-    <head-area :data="{ placeholder }" :jump="jump"></head-area>
-    <recom-food></recom-food>
+    <head-area
+      :data="{ placeholder }"
+      :jump="jump"
+      :location="location"
+    ></head-area>
+    <recom-food :foodtrys="homeData.foodtrys"></recom-food>
     <index-activity></index-activity>
     <member-ad></member-ad>
     <recom-business></recom-business>
@@ -34,6 +38,16 @@ export default {
     return {
       placeholder: '搜索饿了么商家,商品名称',
     };
+  },
+  props: {
+    homeData: {
+      type: Object,
+      required: true,
+    },
+    location: {
+      type: String,
+      required: true,
+    },
   },
   components: {
     mainTabBar,

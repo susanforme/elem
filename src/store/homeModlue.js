@@ -4,13 +4,13 @@ const homeModule = {
     location: '四川成都',
     currentPosition: 0,
     isShowMask: false,
-    data: {
+    homeData: {
       foodtrys: [],
       activities: [],
       shopList: [],
-      detail: {},
-      recomList: [],
     },
+    detail: {},
+    recomList: [],
     status: 404,
   },
   mutations: {
@@ -27,13 +27,13 @@ const homeModule = {
       state.status = newStatus;
     },
     initFoodtrys(state, initData) {
-      state.data.foodtrys = initData;
+      state.homeData.foodtrys = initData;
     },
     initActivities(state, initData) {
-      state.data.activities = initData;
+      state.homeData.activities = initData;
     },
     pushShopList(state, initData) {
-      state.data.shopList.push(...initData);
+      state.homeData.shopList.push(...initData);
     },
   },
   actions: {
