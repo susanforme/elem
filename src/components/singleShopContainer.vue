@@ -138,14 +138,14 @@ export default {
         margin-bottom: 0.2rem;
         width: 80%;
         .box1 {
-          width: 14px;
-          height: 14px;
+          width: 0.7466666666666667rem;
+          height: 0.7466666666666667rem;
           background-color: rgb(240, 115, 115);
-          margin-right: 5px;
-          font-size: 10px;
+          margin-right: 0.26666666666666666rem;
+          font-size: 0.5333333333333333rem;
           color: white;
           text-align: center;
-          line-height: 14px;
+          line-height: 0.7466666666666667rem;
           border-radius: 20%;
         }
         p {
