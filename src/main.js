@@ -13,6 +13,8 @@ import {
   faMapMarkerAlt,
   faAngleDown,
   faFilter,
+  faStar,
+  faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -22,7 +24,9 @@ library.add(
   faUser,
   faMapMarkerAlt,
   faAngleDown,
-  faFilter
+  faFilter,
+  faStar,
+  faSpinner
 );
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 

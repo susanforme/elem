@@ -4,26 +4,39 @@
     <div class="content">
       <p class="title">{{ title }}</p>
       <div class="score">
-        <span>{{ score }}</span
-        ><span>{{ sales }}</span>
+        <span><stars :score="score"></stars> {{ score }}</span
+        ><span> 月售{{ sales }}单</span>
       </div>
-      <p class="lowest-price">{{ lowestPrice }}起送 |{{ trueMsg }}</p>
+      <p class="lowest-price">${{ lowestPrice }}起送 | {{ trueMsg }}</p>
       <p class="description">
         {{ description }}
       </p>
       <div class="right">
-        <p class="dislike"></p>
-        <p class="dsitance">{{ distance }}m|{{ wasteTime }}分钟</p>
+        <p class="dislike">···</p>
+        <p class="dsitance">{{ distance }}m | {{ wasteTime }}分钟</p>
       </div>
       <div class="bottom">
-        <p>满{{ activities[0][0] }}减{{ activities[0][1] }}</p>
-        <p>配送费{{ activities[1] }}</p>
+        <div class="b">
+          <div class="box1">减</div>
+          <p>
+            满{{ activities[0][0] }}元减{{ activities[0][1] }}元,满{{
+              activities[0][0] * 2
+            }}元减{{ activities[0][1] * 2.25 }}元,满{{
+              activities[0][0] * 3
+            }}元减{{ activities[0][1] * 3.5 }}元
+          </p>
+        </div>
+        <div class="b">
+          <div class="box2">配</div>
+          <p>配送费立减{{ activities[1] }}元</p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import stars from './stars';
 export default {
   props: {
     title: String,
@@ -46,6 +59,9 @@ export default {
       return `配送$${this.deliveryFee}`;
     },
   },
+  components: {
+    stars,
+  },
 };
 </script>
 
@@ -54,7 +70,8 @@ export default {
   padding: 4vw @padding;
   background-color: white;
   display: flex;
-  height: 40vw;
+  height: 42vw;
+  border-bottom: 0.133333vw solid #eee;
   img {
     width: 23%;
     height: 50%;
@@ -84,6 +101,19 @@ export default {
       font-size: 0.64rem;
       right: 0;
       top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-right: @padding;
+      .dislike {
+        margin-top: 1vw;
+
+        width: 5vw;
+        text-align: right;
+      }
+      .dsitance {
+        margin-top: 9vw;
+      }
     }
     .description {
       border: 0.02666666666666667rem solid rgb(221, 221, 221);
@@ -97,6 +127,36 @@ export default {
       position: absolute;
       bottom: 0;
       left: 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .b {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.2rem;
+        width: 80%;
+        .box1 {
+          width: 14px;
+          height: 14px;
+          background-color: rgb(240, 115, 115);
+          margin-right: 5px;
+          font-size: 10px;
+          color: white;
+          text-align: center;
+          line-height: 14px;
+          border-radius: 20%;
+        }
+        p {
+          color: rgb(102, 101, 101);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .box2 {
+          .box1();
+          background-color: rgb(112, 188, 70);
+        }
+      }
     }
   }
 }
