@@ -15,8 +15,8 @@
     >
       <div class="mask" v-if="isShowMask" @click="changeMask"></div>
     </transition>
-    <shop-lists></shop-lists>
-    <div class="test" style="height:1000vw"></div>
+    <shop-lists :lists="homeData.shopList"></shop-lists>
+    <div class="tab-bar"></div>
     <main-tab-bar></main-tab-bar>
   </div>
 </template>
@@ -90,5 +90,8 @@ export default {
   -webkit-backdrop-filter: blur(1.333333vw);
   backdrop-filter: blur(0.133333rem);
   backdrop-filter: blur(1.333333vw);
+}
+.tab-bar {
+  height: 13.333333vw;
 }
 </style>
