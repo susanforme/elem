@@ -9,6 +9,7 @@ const homeModule = {
       activities: [],
       shopList: [],
       detail: {},
+      recomList: [],
     },
     status: 404,
   },
@@ -31,6 +32,9 @@ const homeModule = {
     initActivities(state, initData) {
       state.data.activities = initData;
     },
+    pushShopList(state, initData) {
+      state.data.shopList.push(...initData);
+    },
   },
   actions: {
     changeDataStatus({ commit }, status) {
@@ -41,6 +45,9 @@ const homeModule = {
     },
     initActivities({ commit }, initData) {
       commit('initActivities', initData);
+    },
+    pushShopList({ commit }, initData) {
+      commit('pushShopList', initData);
     },
   },
   modules: {},

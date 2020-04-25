@@ -20,18 +20,29 @@ export default {
   },
   methods: {
     ...mapMutations(['changeMaskStatus']),
-    ...mapActions(['changeDataStatus', 'initFoodtrys', 'initActivities']),
+    ...mapActions([
+      'changeDataStatus',
+      'initFoodtrys',
+      'initActivities',
+      'pushShopList',
+    ]),
   },
   created() {
     const _this = this;
     if (this.status !== 200) {
-      axios.get('/home').then((res) => {
-        const data = res.data;
-        console.log(data);
-        _this.initFoodtrys(data.foodtrys);
-        _this.initActivities(data.activities);
-        _this.changeDataStatus(200);
-      });
+      Promise.all([axios.get('/home'), axios.get('/shopping')]).then(
+        ([res1, res2]) => {
+          const homeData = res1.data;
+          const shopData = res2.data;
+          //处理首页推荐图片之类的...
+          _this.initFoodtrys(homeData.foodtrys);
+          _this.initActivities(homeData.activities);
+          //处理首页列表
+          _this.pushShopList(shopData.shopList);
+          //改变状态加载完成
+          _this.changeDataStatus(200);
+        }
+      );
     }
   },
   computed: {
