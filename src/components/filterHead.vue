@@ -89,7 +89,7 @@ export default {
   height: 0;
   opacity: 0;
   text-align: left;
-  border-top: 1px solid rgba(0, 0, 0, 0.082);
+  border-top: 0.05333333333333334rem solid rgba(0, 0, 0, 0.082);
   color: black;
   ul {
     li {
