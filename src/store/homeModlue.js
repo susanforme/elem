@@ -4,6 +4,7 @@ const homeModule = {
     location: '四川成都',
     currentPosition: 0,
     isShowMask: false,
+    data: [],
   },
   mutations: {
     changeLocation(state, newLocation) {
