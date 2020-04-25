@@ -14,6 +14,7 @@ export default {
   },
   destroyed() {
     this.changeMaskStatus(false);
+    document.documentElement.style.overflow = '';
   },
   methods: {
     ...mapMutations(['changeMaskStatus']),
