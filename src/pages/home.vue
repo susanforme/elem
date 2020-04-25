@@ -25,7 +25,8 @@ import indexActivity from '@/components/indexActivity';
 import memberAd from '@/components/memberAd';
 import recomBusiness from '@/components/recomBusiness';
 import shopLists from '@/components/shopLists';
-import { mapState, mapMutations } from 'vuex';
+import { createNamespacedHelpers } from 'vuex';
+const { mapMutations, mapState } = createNamespacedHelpers('home');
 
 export default {
   name: 'home',

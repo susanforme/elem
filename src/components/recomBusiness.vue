@@ -8,7 +8,8 @@
 
 <script>
 import filterHeader from './filterHead';
-import { mapState } from 'vuex';
+import { createNamespacedHelpers } from 'vuex';
+const { mapState } = createNamespacedHelpers('home');
 
 export default {
   components: {

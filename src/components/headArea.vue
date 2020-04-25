@@ -11,7 +11,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { createNamespacedHelpers } from 'vuex';
+const { mapState } = createNamespacedHelpers('home');
 export default {
   components: {},
   props: {

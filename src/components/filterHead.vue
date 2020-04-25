@@ -15,7 +15,8 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { createNamespacedHelpers } from 'vuex';
+const { mapMutations } = createNamespacedHelpers('home');
 export default {
   data() {
     return {
