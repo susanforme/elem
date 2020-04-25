@@ -24,7 +24,7 @@ export default {
     ...mapActions([
       'changeDataStatus',
       'initFoodtrys',
-      'initActivities',
+      'initactivity',
       'pushShopList',
     ]),
   },
@@ -37,7 +37,7 @@ export default {
           const shopData = res2.data;
           //处理首页推荐图片之类的...
           _this.initFoodtrys(homeData.foodtrys);
-          _this.initActivities(homeData.activities);
+          _this.initactivity(homeData.activity);
           //处理首页列表
           _this.pushShopList(shopData.shopList);
           //改变状态加载完成

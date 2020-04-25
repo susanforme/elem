@@ -6,7 +6,7 @@
       :location="location"
     ></head-area>
     <recom-food :foodtrys="homeData.foodtrys"></recom-food>
-    <index-activity></index-activity>
+    <index-activity :activity="homeData.activity"></index-activity>
     <member-ad></member-ad>
     <recom-business></recom-business>
     <transition

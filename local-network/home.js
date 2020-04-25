@@ -51,7 +51,7 @@ const home = {
       title: '炸鸡炸串',
     },
   ],
-  activities: {
+  activity: {
     title: '品质套餐',
     description: '搭配齐全吃得好',
     imgSrc:

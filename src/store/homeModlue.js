@@ -6,7 +6,7 @@ const homeModule = {
     isShowMask: false,
     homeData: {
       foodtrys: [],
-      activities: [],
+      activity: {},
       shopList: [],
     },
     detail: {},
@@ -29,8 +29,8 @@ const homeModule = {
     initFoodtrys(state, initData) {
       state.homeData.foodtrys = initData;
     },
-    initActivities(state, initData) {
-      state.homeData.activities = initData;
+    initactivity(state, initData) {
+      state.homeData.activity = initData;
     },
     pushShopList(state, initData) {
       state.homeData.shopList.push(...initData);
@@ -43,8 +43,8 @@ const homeModule = {
     initFoodtrys({ commit }, initData) {
       commit('initFoodtrys', initData);
     },
-    initActivities({ commit }, initData) {
-      commit('initActivities', initData);
+    initactivity({ commit }, initData) {
+      commit('initactivity', initData);
     },
     pushShopList({ commit }, initData) {
       commit('pushShopList', initData);

@@ -13,15 +13,11 @@
 
 <script>
 export default {
-  data() {
-    return {
-      activity: {
-        title: '品质套餐',
-        description: '搭配齐全吃得好',
-        imgSrc:
-          'https://cube.elemecdn.com/e/ee/df43e7e53f6e1346c3fda0609f1d3png.png?x-oss-process=image/format,webp/resize,w_282,h_188,m_fixed',
-      },
-    };
+  props: {
+    activity: {
+      type: Object,
+      required: true,
+    },
   },
 };
 </script>
