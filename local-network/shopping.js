@@ -1,5 +1,5 @@
 const data = {
-  data: [
+  shopList: [
     {
       title: '喜心肥肠血旺(龙湖北城天街店)',
       score: 5,

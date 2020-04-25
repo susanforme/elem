@@ -1,6 +1,7 @@
 const express = require('express');
 const shoppingData = require('./shopping');
 const detailData = require('./detail');
+const homeData = require('./home.js');
 const app = express();
 const port = 5050;
 
@@ -15,6 +16,9 @@ app.get('/detail', (req, res) => {
     }
     res.send(JSON.parse(data));
   });
+});
+app.get('/home', (req, res) => {
+  res.send(homeData);
 });
 app.listen(port, () =>
   console.log(`Example app listening on http://127.0.0.1:${port} port!`)
