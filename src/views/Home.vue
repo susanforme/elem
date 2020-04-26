@@ -1,20 +1,17 @@
 <template>
   <div>
-    <home :homeData="homeData" :location="location"></home>
+    <router-view />
   </div>
 </template>
 
 <script>
-import home from '@/pages/home/home';
 import { createNamespacedHelpers } from 'vuex';
 import axios from '@/api';
 
 const { mapMutations, mapState, mapActions } = createNamespacedHelpers('home');
 export default {
   name: 'homeView',
-  components: {
-    home,
-  },
+
   destroyed() {
     this.changeMaskStatus(false);
     document.documentElement.style.overflow = '';

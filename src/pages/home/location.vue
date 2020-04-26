@@ -1,11 +1,13 @@
 <template>
   <div>
-    location
+    asdasdasd
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'location',
+};
 </script>
 
 <style lang="less" scoped></style>

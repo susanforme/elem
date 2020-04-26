@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home';
-
+import homPage from '@/pages/home/home';
 Vue.use(VueRouter);
 
 const routes = [
@@ -11,8 +11,19 @@ const routes = [
   },
   {
     path: '/home',
-    name: 'Home',
     component: Home,
+    children: [
+      {
+        path: '/',
+        name: 'homePage',
+        component: homPage,
+      },
+      {
+        path: 'location',
+        name: 'location',
+        component: () => import('@/pages/home/location'),
+      },
+    ],
   },
   {
     path: '/discover',

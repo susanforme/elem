@@ -39,16 +39,6 @@ export default {
       placeholder: '搜索饿了么商家,商品名称',
     };
   },
-  props: {
-    homeData: {
-      type: Object,
-      required: true,
-    },
-    location: {
-      type: String,
-      required: true,
-    },
-  },
   components: {
     mainTabBar,
     headArea,
@@ -70,7 +60,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(['isShowMask']),
+    ...mapState(['isShowMask', 'homeData', 'location']),
   },
 };
 </script>
