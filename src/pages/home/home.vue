@@ -51,7 +51,7 @@ export default {
   methods: {
     jump() {
       //跳转另一个页面
-      this.$router.push('home/search');
+      this.$router.push('/home/search');
     },
     ...mapMutations('home', ['changeMaskStatus']),
     ...mapActions('home/home', [

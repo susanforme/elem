@@ -12,6 +12,7 @@ import {
   faUser,
   faMapMarkerAlt,
   faAngleDown,
+  faAngleLeft,
   faFilter,
   faStar,
   faSpinner,
@@ -24,6 +25,7 @@ library.add(
   faUser,
   faMapMarkerAlt,
   faAngleDown,
+  faAngleLeft,
   faFilter,
   faStar,
   faSpinner

@@ -1,5 +1,5 @@
 <template>
-  <input type="text" :placeholder="placeholder" class="input" />
+  <input type="text" :placeholder="placeholder" @input="model" class="input" />
 </template>
 
 <script>
@@ -8,6 +8,15 @@ export default {
     placeholder: {
       type: String,
       default: '搜索',
+    },
+  },
+  model: {
+    event: 'model',
+    prop: 'text',
+  },
+  methods: {
+    model(e) {
+      this.$emit('model', e.target.value);
     },
   },
 };

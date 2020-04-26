@@ -1,6 +1,11 @@
 <template>
   <div>
-    <router-view />
+    <transition
+      enter-active-class="animated zoomInDown"
+      leave-active-class="animated zoomOutUp"
+    >
+      <router-view />
+    </transition>
   </div>
 </template>
 
