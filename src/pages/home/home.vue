@@ -30,7 +30,9 @@ import memberAd from '@/components/memberAd';
 import recomBusiness from '@/components/recomBusiness';
 import shopLists from '@/components/shopLists';
 import { createNamespacedHelpers } from 'vuex';
-const { mapMutations, mapState } = createNamespacedHelpers('home');
+import axios from '@/api';
+
+const { mapMutations, mapState, mapActions } = createNamespacedHelpers('home');
 
 export default {
   name: 'home',
@@ -54,13 +56,42 @@ export default {
       console.log('我等会在跳转');
     },
     ...mapMutations(['changeMaskStatus']),
+    ...mapActions([
+      'changeDataStatus',
+      'initFoodtrys',
+      'initactivity',
+      'pushShopList',
+    ]),
     changeMask() {
       this.changeMaskStatus(false);
       document.documentElement.style.overflow = '';
     },
   },
   computed: {
-    ...mapState(['isShowMask', 'homeData', 'location']),
+    ...mapState(['isShowMask', 'homeData', 'location', 'status']),
+  },
+
+  destroyed() {
+    this.changeMaskStatus(false);
+    document.documentElement.style.overflow = '';
+  },
+  created() {
+    const _this = this;
+    if (this.status !== 200) {
+      Promise.all([axios.get('/home'), axios.get('/shopping')]).then(
+        ([res1, res2]) => {
+          const homeData = res1.data;
+          const shopData = res2.data;
+          //处理首页推荐图片之类的...
+          _this.initFoodtrys(homeData.foodtrys);
+          _this.initactivity(homeData.activity);
+          //处理首页列表
+          _this.pushShopList(shopData.shopList);
+          //改变状态加载完成
+          _this.changeDataStatus(200);
+        }
+      );
+    }
   },
 };
 </script>
