@@ -23,6 +23,11 @@ const routes = [
         name: 'location',
         component: () => import('@/pages/home/location'),
       },
+      {
+        path: 'search',
+        name: 'search',
+        component: () => import('@/pages/home/search'),
+      },
     ],
   },
   {

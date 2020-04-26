@@ -9,7 +9,12 @@ const homeModule = {
       activity: {},
       shopList: [],
     },
-    detail: {},
+    searchData: {
+      searchList: [],
+    },
+    detailData: {
+      detailList: [],
+    },
     recomList: [],
     status: 404,
   },

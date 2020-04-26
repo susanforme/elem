@@ -56,12 +56,17 @@ export default {
   },
   methods: {
     goDetail() {
-      const dom = this.$refs['filter'];
-      this.changeMaskStatus(true);
-      if (!dom.getAttribute('class').includes('fixed')) {
-        window.scrollTo(0, dom.offsetTop - 10);
+      if (!this.isShowMask) {
+        const dom = this.$refs['filter'];
+        this.changeMaskStatus(true);
+        if (!dom.getAttribute('class').includes('fixed')) {
+          window.scrollTo(0, dom.offsetTop - 10);
+        }
+        document.documentElement.style.overflow = 'hidden';
+      } else {
+        this.changeMaskStatus(false);
+        document.documentElement.style.overflow = '';
       }
-      document.documentElement.style.overflow = 'hidden';
     },
     ...mapMutations(['changeMaskStatus']),
   },
@@ -115,7 +120,7 @@ export default {
   }
 }
 .anima {
-  transition: all 0.5s ease-in;
+  transition: all 0.4s ease-in;
 }
 .animation {
   height: 70vw;
