@@ -3,10 +3,10 @@
     <head-area
       :data="{ placeholder }"
       :jump="jump"
-      :location="location"
+      :location="myLocation"
     ></head-area>
-    <recom-food :foodtrys="homeData.foodtrys"></recom-food>
-    <index-activity :activity="homeData.activity"></index-activity>
+    <recom-food :foodtrys="foodtrys"></recom-food>
+    <index-activity :activity="activity"></index-activity>
     <member-ad></member-ad>
     <recom-business></recom-business>
     <transition
@@ -15,7 +15,7 @@
     >
       <div class="mask" v-if="isShowMask" @click="changeMask"></div>
     </transition>
-    <shop-lists :lists="homeData.shopList"></shop-lists>
+    <shop-lists :lists="shopList"></shop-lists>
     <div class="tab-bar"></div>
     <main-tab-bar></main-tab-bar>
   </div>
@@ -29,10 +29,8 @@ import indexActivity from '@/components/indexActivity';
 import memberAd from '@/components/memberAd';
 import recomBusiness from '@/components/recomBusiness';
 import shopLists from '@/components/shopLists';
-import { createNamespacedHelpers } from 'vuex';
 import axios from '@/api';
-
-const { mapMutations, mapState, mapActions } = createNamespacedHelpers('home');
+import { mapMutations, mapState, mapActions } from 'vuex';
 
 export default {
   name: 'home',
@@ -55,8 +53,8 @@ export default {
       //跳转另一个页面
       console.log('我等会在跳转');
     },
-    ...mapMutations(['changeMaskStatus']),
-    ...mapActions([
+    ...mapMutations('home', ['changeMaskStatus']),
+    ...mapActions('home/home', [
       'changeDataStatus',
       'initFoodtrys',
       'initactivity',
@@ -68,7 +66,8 @@ export default {
     },
   },
   computed: {
-    ...mapState(['isShowMask', 'homeData', 'location', 'status']),
+    ...mapState('home/home', ['shopList', 'status', 'foodtrys', 'activity']),
+    ...mapState('home', ['isShowMask', 'myLocation']),
   },
 
   destroyed() {

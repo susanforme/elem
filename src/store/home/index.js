@@ -6,7 +6,7 @@ import location from './location';
 const homeModule = {
   namespaced: true,
   state: {
-    location: '四川成都',
+    myLocation: '四川成都',
     currentPosition: 0,
     isShowMask: false,
   },
