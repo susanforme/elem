@@ -28,6 +28,11 @@ const routes = [
         name: 'search',
         component: () => import('@/pages/home/search'),
       },
+      {
+        path: 'recommend',
+        name: 'recommend',
+        component: () => import('@/pages/home/recommend'),
+      },
     ],
   },
   {
