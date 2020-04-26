@@ -23,11 +23,11 @@
 
 <script>
 import mainTabBar from '@/components/mainTabBar';
-import headArea from '@/components/headArea';
-import recomFood from '@/components/recomFood';
+import headArea from '@/components/home/headArea';
+import recomFood from '@/components/home/recomFood';
 import indexActivity from '@/components/indexActivity';
 import memberAd from '@/components/memberAd';
-import recomBusiness from '@/components/recomBusiness';
+import recomBusiness from '@/components/home/recomBusiness';
 import shopLists from '@/components/shopLists';
 import axios from '@/api';
 import { mapMutations, mapState, mapActions } from 'vuex';
@@ -51,7 +51,7 @@ export default {
   methods: {
     jump() {
       //跳转另一个页面
-      console.log('我等会在跳转');
+      this.$router.push('home/search');
     },
     ...mapMutations('home', ['changeMaskStatus']),
     ...mapActions('home/home', [

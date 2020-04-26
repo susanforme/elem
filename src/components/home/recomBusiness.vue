@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import filterHeader from './filterHead';
+import filterHeader from '../filterHead';
 
 export default {
   components: {
