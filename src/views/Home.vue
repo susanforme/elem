@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import home from '@/pages/home';
+import home from '@/pages/home/home';
 import { createNamespacedHelpers } from 'vuex';
 import axios from '@/api';
 

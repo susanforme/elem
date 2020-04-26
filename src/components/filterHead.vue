@@ -1,23 +1,32 @@
 <template>
-  <div class="filter" :class="{ fixed: isFixed }">
-    <div @click="goDetail" :class="{ primary: isShowMask }">
-      {{ sorts[index] }} <font-awesome-icon icon="angle-down" />
-      <div class="list anima" :class="{ animation: isShowMask }">
-        <ul>
-          <li v-for="(sort, index) in sorts" :key="index">{{ sort }}</li>
-        </ul>
+  <div>
+    <div class="filter" :class="{ fixed: isFixed }" ref="filter">
+      <div @click="goDetail" :class="{ primary: isShowMask }">
+        {{ sorts[index] }} <font-awesome-icon icon="angle-down" />
+        <div class="list anima" :class="{ animation: isShowMask }">
+          <ul>
+            <li v-for="(sort, index) in sorts" :key="index">{{ sort }}</li>
+          </ul>
+        </div>
       </div>
+      <div>距离最近</div>
+      <div>销量最高</div>
+      <div>筛选 <font-awesome-icon icon="filter" /></div>
     </div>
-    <div>距离最近</div>
-    <div>销量最高</div>
-    <div>筛选 <font-awesome-icon icon="filter" /></div>
+    <div class="add-position" v-if="isFixed"></div>
   </div>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-const { mapMutations } = createNamespacedHelpers('home');
+const { mapMutations, mapState } = createNamespacedHelpers('home');
 export default {
+  props: {
+    isOtherPage: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       sorts: [
@@ -32,22 +41,29 @@ export default {
       index: 0,
     };
   },
+  computed: {
+    ...mapState(['currentPosition', 'isShowMask']),
+    isFixed() {
+      if (!this.isOtherPage) {
+        const height = 107.6 * (document.documentElement.clientWidth / 100);
+        if (this.currentPosition >= height) {
+          return true;
+        }
+        return false;
+      }
+      return true;
+    },
+  },
   methods: {
     goDetail() {
-      const height = 108 * (document.documentElement.clientWidth / 100);
+      const dom = this.$refs['filter'];
       this.changeMaskStatus(true);
+      if (!dom.getAttribute('class').includes('fixed')) {
+        window.scrollTo(0, dom.offsetTop - 10);
+      }
       document.documentElement.style.overflow = 'hidden';
-      window.scrollTo(0, height);
     },
     ...mapMutations(['changeMaskStatus']),
-  },
-  props: {
-    isFixed: {
-      type: Boolean,
-    },
-    isShowMask: {
-      type: Boolean,
-    },
   },
 };
 </script>
@@ -110,5 +126,8 @@ export default {
   > svg {
     color: @primary;
   }
+}
+.add-position {
+  height: 10vw;
 }
 </style>
