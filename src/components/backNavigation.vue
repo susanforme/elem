@@ -32,7 +32,7 @@ export default {
   align-items: center;
   color: rgb(158, 158, 158);
   svg {
-    font-size: 30px;
+    font-size: 1.6rem;
     position: absolute;
   }
   > .center {
