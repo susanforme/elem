@@ -26,12 +26,14 @@ export default {
 input {
   width: 100%;
   box-sizing: border-box;
-  height: 2.1333333333333333rem;
+  height: 100%;
+  line-height: 100%;
   border: none;
   background-color: white;
   outline: none;
   border: 0.10666666666666667rem;
-  text-align: center;
+  padding: 3%;
+  color: rgb(121, 121, 121);
   &:disabled {
     background-color: white;
   }

@@ -1,13 +1,19 @@
 <template>
-  <div class="back">
+  <div class="back" :style="customStyle">
     <!-- 注意放入插槽 -->
     <font-awesome-icon icon="angle-left" @click="goback" />
-    <slot name="title"></slot>
+    <p class="center"><slot name="title"></slot></p>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    customStyle: {
+      type: Object,
+      default: null,
+    },
+  },
   methods: {
     goback() {
       this.$router.back();
@@ -24,9 +30,14 @@ export default {
   line-height: 10vw;
   display: flex;
   align-items: center;
+  color: rgb(158, 158, 158);
   svg {
     font-size: 30px;
-    color: rgb(158, 158, 158);
+    position: absolute;
+  }
+  > .center {
+    text-align: center;
+    width: 100%;
   }
 }
 </style>
