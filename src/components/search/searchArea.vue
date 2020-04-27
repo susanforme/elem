@@ -4,7 +4,7 @@
       <custom-input v-model="text" :placeholder="'输入商家名称'"></custom-input
       ><span>搜索</span>
     </div>
-    <hot-search></hot-search>
+    <hot-search v-if="!isLoading"></hot-search>
   </div>
 </template>
 
@@ -17,6 +17,12 @@ export default {
     return {
       text: '',
     };
+  },
+  props: {
+    isLoading: {
+      type: Boolean,
+      required: true,
+    },
   },
   components: {
     customInput,
