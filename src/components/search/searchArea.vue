@@ -2,9 +2,9 @@
   <div class="search-area">
     <div class="fa">
       <custom-input v-model="text" :placeholder="'输入商家名称'"></custom-input
-      ><span>搜索</span>
+      ><span @click="startSearch">搜索</span>
     </div>
-    <hot-search v-if="!isLoading"></hot-search>
+    <hot-search v-if="isInittal" :startSearch="startSearch"></hot-search>
   </div>
 </template>
 
@@ -19,8 +19,12 @@ export default {
     };
   },
   props: {
-    isLoading: {
+    isInittal: {
       type: Boolean,
+      required: true,
+    },
+    startSearch: {
+      type: Function,
       required: true,
     },
   },

@@ -69,11 +69,6 @@ export default {
     ...mapState('home/home', ['shopList', 'status', 'foodtrys', 'activity']),
     ...mapState('home', ['isShowMask', 'myLocation']),
   },
-
-  destroyed() {
-    this.changeMaskStatus(false);
-    document.documentElement.style.overflow = '';
-  },
   created() {
     const _this = this;
     if (this.status !== 200) {
@@ -91,6 +86,13 @@ export default {
         }
       );
     }
+  },
+  beforeDestroy() {
+    window.scrollTo(0, 0);
+  },
+  destroyed() {
+    this.changeMaskStatus(false);
+    document.documentElement.style.overflow = '';
   },
 };
 </script>

@@ -7,6 +7,7 @@
         class="hot-words"
         v-for="(word, index) in hotSearchList"
         :key="index"
+        @click="startSearch"
       >
         {{ word }}
       </div>
@@ -30,6 +31,12 @@ export default {
         '米线',
       ],
     };
+  },
+  props: {
+    startSearch: {
+      type: Function,
+      required: true,
+    },
   },
 };
 </script>
