@@ -89,8 +89,6 @@ export default {
   },
   beforeDestroy() {
     window.scrollTo(0, 0);
-  },
-  destroyed() {
     this.changeMaskStatus(false);
     document.documentElement.style.overflow = '';
   },

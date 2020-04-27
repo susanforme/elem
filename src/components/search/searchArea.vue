@@ -1,10 +1,16 @@
 <template>
-  <div class="search-area">
-    <div class="fa">
-      <custom-input v-model="text" :placeholder="'输入商家名称'"></custom-input
-      ><span @click="startSearch">搜索</span>
+  <div>
+    <div class="search-area">
+      <div class="fa" :class="{ fixed: isFixed }">
+        <custom-input
+          v-model="text"
+          :placeholder="'输入商家名称'"
+        ></custom-input
+        ><span @click="startSearch">搜索</span>
+      </div>
+      <hot-search v-if="isInittal" :startSearch="startSearch"></hot-search>
     </div>
-    <hot-search v-if="isInittal" :startSearch="startSearch"></hot-search>
+    <div class="add-position"></div>
   </div>
 </template>
 
@@ -26,6 +32,10 @@ export default {
     startSearch: {
       type: Function,
       required: true,
+    },
+    isFixed: {
+      type: Boolean,
+      default: false,
     },
   },
   components: {
@@ -54,5 +64,18 @@ export default {
       font-weight: 700;
     }
   }
+}
+.fixed {
+  position: fixed;
+  top: 10vw;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 0 @padding;
+  z-index: 10;
+}
+.add-position {
+  margin-top: 3vw;
+  height: 8vw;
 }
 </style>

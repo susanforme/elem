@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <filter-head :isOtherPage="true"></filter-head>
+  <div class="list">
+    <filter-head :isOtherPage="true" :otherPageClass="'search'"></filter-head>
     <shop-lists :lists="searchList"></shop-lists>
   </div>
 </template>

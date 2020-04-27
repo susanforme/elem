@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div class="filter" :class="{ fixed: isFixed }" ref="filter">
+    <div
+      class="filter"
+      :class="{ fixed: isFixed, [otherPageClass]: isOtherPage }"
+      ref="filter"
+    >
       <div @click="goDetail" :class="{ primary: isShowMask }">
         {{ sorts[index] }} <font-awesome-icon icon="angle-down" />
         <div class="list anima" :class="{ animation: isShowMask }">
@@ -26,6 +30,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    otherPageClass: {
+      type: String,
+      default: 'test',
+    },
   },
   data() {
     return {
@@ -50,8 +58,9 @@ export default {
           return true;
         }
         return false;
+      } else {
+        return true;
       }
-      return true;
     },
   },
   methods: {
@@ -99,7 +108,6 @@ export default {
 }
 .list {
   position: fixed;
-  top: 23.6vw;
   left: 0;
   right: 0;
   background-color: white;
@@ -134,5 +142,14 @@ export default {
 }
 .add-position {
   height: 10vw;
+}
+.search {
+  position: fixed;
+  top: 18vw;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 0 @padding;
+  z-index: 10;
 }
 </style>
