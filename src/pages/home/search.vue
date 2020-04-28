@@ -14,6 +14,7 @@
       v-if="isShow"
       :searchList="searchList"
       :detailList="detailList"
+      :pushData="pushSearchList"
     ></search-lists>
     <transition
       enter-active-class="animated fadeIn"

@@ -1,5 +1,5 @@
 <template>
-  <p class="anima-father">
+  <p class="anima-father" :style="animaStyle">
     <font-awesome-icon icon="spinner" class="anima" :style="loadingStyle" />
   </p>
 </template>
@@ -8,6 +8,10 @@
 export default {
   props: {
     loadingStyle: {
+      type: Object,
+      default: null,
+    },
+    animaStyle: {
       type: Object,
       default: null,
     },
@@ -34,5 +38,8 @@ export default {
   text-align: center;
   padding: @padding 0;
   height: 100vh;
+  color: #0089dc;
+  background-color: white;
+  border: none;
 }
 </style>

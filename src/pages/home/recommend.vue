@@ -16,7 +16,12 @@
       :loadingStyle="{ color: '#0089dc' }"
       v-if="isLoading"
     ></loading-anima>
-    <shop-lists v-else :lists="recommendList"></shop-lists>
+    <shop-lists
+      v-else
+      :lists="recommendList"
+      :pushData="pushRecommendList"
+      apiUrl="recommend"
+    ></shop-lists>
   </div>
 </template>
 
@@ -49,7 +54,11 @@ export default {
   methods: {
     ...mapMutations('home', ['changeMaskStatus']),
     ...mapMutations('home/recommend', ['detailList']),
-    ...mapActions('home/recommend', ['initRecommendList', 'changeStatus']),
+    ...mapActions('home/recommend', [
+      'initRecommendList',
+      'changeStatus',
+      'pushRecommendList',
+    ]),
     changeMask() {
       this.changeMaskStatus(false);
       document.documentElement.style.overflow = '';

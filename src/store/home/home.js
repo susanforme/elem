@@ -17,7 +17,7 @@ const homeModule = {
       state.activity = initData;
     },
     pushShopList(state, initData) {
-      state.shopList.push(...initData);
+      state.shopList.push(...initData.shopList);
     },
     detailList(state, callback) {
       state.shopList = state.shopList.sort(callback);

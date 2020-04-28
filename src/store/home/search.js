@@ -7,7 +7,7 @@ const searchModule = {
   mutations: {
     pushSearchList(state, data) {
       //向下拖动加载
-      state.searchList.push(data);
+      state.searchList.push(...data.searchList);
     },
     initSearchList(state, data) {
       //第一次初始化
@@ -23,7 +23,7 @@ const searchModule = {
   actions: {
     pushSearchList({ commit }, data) {
       //向下拖动加载
-      commit(' pushSearchList', data);
+      commit('pushSearchList', data);
     },
     initSearchList({ commit }, data) {
       //第一次初始化

@@ -7,7 +7,7 @@ const recommendModule = {
   mutations: {
     pushRecommendList(state, data) {
       //向下拖动加载
-      state.recommendList.push(data);
+      state.recommendList.push(...data.recommendList);
     },
     initRecommendList(state, data) {
       //第一次初始化
@@ -23,7 +23,7 @@ const recommendModule = {
   actions: {
     pushRecommendList({ commit }, data) {
       //向下拖动加载
-      commit(' pushRecommendList', data);
+      commit('pushRecommendList', data);
     },
     initRecommendList({ commit }, data) {
       //第一次初始化

@@ -5,7 +5,11 @@
       :otherPageClass="'search'"
       :detailList="detailList"
     ></filter-head>
-    <shop-lists :lists="searchList"></shop-lists>
+    <shop-lists
+      :lists="searchList"
+      apiUrl="search"
+      :pushData="pushData"
+    ></shop-lists>
   </div>
 </template>
 
@@ -23,6 +27,10 @@ export default {
       required: true,
     },
     detailList: {
+      type: Function,
+      required: true,
+    },
+    pushData: {
       type: Function,
       required: true,
     },

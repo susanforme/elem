@@ -16,7 +16,12 @@
       <div class="mask" v-if="isShowMask" @click="changeMask"></div>
     </transition>
     <loading-anima v-if="isLoading"></loading-anima>
-    <shop-lists :lists="shopList" v-else></shop-lists>
+    <shop-lists
+      :lists="shopList"
+      :apiUrl="'/shopping'"
+      :pushData="pushShopList"
+      v-else
+    ></shop-lists>
     <div class="tab-bar"></div>
     <main-tab-bar></main-tab-bar>
   </div>
@@ -85,7 +90,7 @@ export default {
           _this.initFoodtrys(homeData.foodtrys);
           _this.initactivity(homeData.activity);
           //处理首页列表
-          _this.pushShopList(shopData.shopList);
+          _this.pushShopList(shopData);
           //改变状态加载完成
           _this.changeDataStatus(200);
           _this.isLoading = false;
