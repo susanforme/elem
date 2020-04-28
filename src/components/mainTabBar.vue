@@ -16,10 +16,10 @@ export default {
   data() {
     return {
       bars: [
-        { icon: 'cookie', titile: '首页', to: 'Home' },
-        { icon: 'compass', titile: '发现', to: 'Discover' },
-        { icon: 'file-alt', titile: '订单', to: 'Order' },
-        { icon: 'user', titile: '我的', to: 'User' },
+        { icon: 'cookie', titile: '首页', to: 'home' },
+        { icon: 'compass', titile: '发现', to: 'discover' },
+        { icon: 'file-alt', titile: '订单', to: 'order' },
+        { icon: 'user', titile: '我的', to: 'user' },
       ],
     };
   },
