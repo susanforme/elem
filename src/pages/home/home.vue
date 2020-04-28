@@ -15,7 +15,8 @@
     >
       <div class="mask" v-if="isShowMask" @click="changeMask"></div>
     </transition>
-    <shop-lists :lists="shopList"></shop-lists>
+    <loading-anima v-if="isLoading"></loading-anima>
+    <shop-lists :lists="shopList" v-else></shop-lists>
     <div class="tab-bar"></div>
     <main-tab-bar></main-tab-bar>
   </div>
@@ -29,6 +30,7 @@ import indexActivity from '@/components/home/indexActivity';
 import memberAd from '@/components/home/memberAd';
 import recomBusiness from '@/components/home/recomBusiness';
 import shopLists from '@/components/shopLists';
+import loadingAnima from '@/components/loadingAnima';
 import axios from '@/api';
 import { mapMutations, mapState, mapActions } from 'vuex';
 
@@ -48,6 +50,7 @@ export default {
     memberAd,
     recomBusiness,
     shopLists,
+    loadingAnima,
   },
   methods: {
     jump() {
@@ -85,8 +88,11 @@ export default {
           _this.pushShopList(shopData.shopList);
           //改变状态加载完成
           _this.changeDataStatus(200);
+          _this.isLoading = false;
         }
       );
+    } else {
+      this.isLoading = false;
     }
   },
   beforeDestroy() {
