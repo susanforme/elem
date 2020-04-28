@@ -20,7 +20,7 @@ const homeModule = {
       state.shopList.push(...initData);
     },
     detailList(state, callback) {
-      state.shopList = callback(state.shopList);
+      state.shopList = state.shopList.sort(callback);
     },
   },
   actions: {

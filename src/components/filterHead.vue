@@ -49,7 +49,7 @@ export default {
     return {
       sorts: [
         { name: '综合排序', sort: forward('id') },
-        { name: '好评优先', sort: forward('score') },
+        { name: '好评优先', sort: forward('score', -1) },
         { name: '起送价最低', sort: forward('lowestPrice') },
         { name: '配送最快', sort: forward('wasteTime') },
         { name: '配送费最低', sort: forward('deliveryFee') },
