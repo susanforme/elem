@@ -31,7 +31,6 @@ export default {
 
 <style lang="less" scoped>
 .back {
-  width: 100%;
   background-color: white;
   height: 10vw;
   line-height: 10vw;
