@@ -9,7 +9,7 @@ const data = {
       imgSrc:
         'https://cube.elemecdn.com/a/73/0ce0793eda313c62417b29450884bjpeg.jpeg?x-oss-process=image/format,webp/resize,w_130,h_130,m_fixed',
       distance: 52,
-      wasteTime: 30,
+      wasteTime: 35,
       id: 1,
       description: '川湘菜',
       activities: [[35, 12], 3],
@@ -51,7 +51,7 @@ const data = {
       imgSrc:
         'https://cube.elemecdn.com/a/73/0ce0793eda313c62417b29450884bjpeg.jpeg?x-oss-process=image/format,webp/resize,w_130,h_130,m_fixed',
       distance: 52,
-      wasteTime: 30,
+      wasteTime: 35,
       id: 1,
       description: '川湘菜',
       activities: [[35, 12], 3],
