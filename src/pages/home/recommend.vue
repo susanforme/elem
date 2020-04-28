@@ -15,6 +15,7 @@
     <p class="anima-father" v-if="isLoading">
       <loading-anima :loadingStyle="{ color: '#0089dc' }"></loading-anima>
     </p>
+    <shop-lists v-else :lists="recommendList"></shop-lists>
   </div>
 </template>
 
@@ -23,6 +24,7 @@
 import backNavigation from '@/components/backNavigation';
 import filterHead from '@/components/filterHead';
 import loadingAnima from '@/components/loadingAnima';
+import shopLists from '@/components/shopLists';
 import { mapState, mapActions, mapMutations } from 'vuex';
 import axios from '@/api';
 
@@ -37,9 +39,11 @@ export default {
     backNavigation,
     filterHead,
     loadingAnima,
+    shopLists,
   },
   computed: {
     ...mapState('home', ['isShowMask']),
+    ...mapState('home/recommend', ['recommendList']),
   },
   methods: {
     ...mapMutations('home', ['changeMaskStatus']),
