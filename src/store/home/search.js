@@ -17,7 +17,7 @@ const searchModule = {
       state.status = status;
     },
     detailList(state, callback) {
-      state.searchList = callback(state.searchList);
+      state.searchList = state.searchList.sort(callback);
     },
   },
   actions: {

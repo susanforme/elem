@@ -6,7 +6,7 @@
       ref="filter"
     >
       <div @click="goDetail" :class="{ primary: isShowMask }">
-        {{ sorts[index] }} <font-awesome-icon icon="angle-down" />
+        {{ sorts[index].name }} <font-awesome-icon icon="angle-down" />
         <div class="list anima" :class="{ animation: isShowMask }">
           <ul>
             <li
@@ -14,13 +14,13 @@
               :key="index"
               @click="sortData(index)"
             >
-              {{ sort }}
+              {{ sort.name }}
             </li>
           </ul>
         </div>
       </div>
-      <div>距离最近</div>
-      <div>销量最高</div>
+      <div @click="detailDistance">距离最近</div>
+      <div @click="detailSail">销量最高</div>
       <div>筛选 <font-awesome-icon icon="filter" /></div>
     </div>
     <div class="add-position" v-if="isFixed"></div>
@@ -48,13 +48,13 @@ export default {
   data() {
     return {
       sorts: [
-        '综合排序',
-        '好评优先',
-        '起送价最低',
-        '配送最快',
-        '配送费最低',
-        '人均从低到高',
-        '人均从高到低',
+        { name: '综合排序', sort: forward('id') },
+        { name: '好评优先', sort: forward('score') },
+        { name: '起送价最低', sort: forward('lowestPrice') },
+        { name: '配送最快', sort: forward('wasteTime') },
+        { name: '配送费最低', sort: forward('deliveryFee') },
+        { name: '人均从低到高', sort: forward('id') },
+        { name: '人均从高到低', sort: forward('deliveryFee') },
       ],
       index: 0,
     };
@@ -89,10 +89,25 @@ export default {
     },
     ...mapMutations(['changeMaskStatus']),
     sortData(index) {
-      console.log(this.detailList);
+      this.index = index;
+      this.detailList(this.sorts[index].sort);
+    },
+    detailDistance() {
+      this.index = 0;
+      this.detailList(forward('distance'));
+    },
+    detailSail() {
+      this.index = 0;
+      this.detailList(forward('sales', -1));
     },
   },
 };
+
+function forward(propertyName, direction = 1) {
+  return (a, b) => {
+    return (a[propertyName] - b[propertyName]) * direction;
+  };
+}
 </script>
 
 <style lang="less" scoped>
@@ -103,6 +118,7 @@ export default {
   font-size: 0.7466666666666667rem;
   height: 10vw;
   line-height: 10vw;
+  font-size: 0.64rem;
   > div {
     flex: 1;
   }
