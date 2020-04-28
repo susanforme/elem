@@ -16,6 +16,9 @@ const searchModule = {
     changeStatus(state, status) {
       state.status = status;
     },
+    detailList(state, callback) {
+      state.searchList = callback(state.searchList);
+    },
   },
   actions: {
     pushSearchList({ commit }, data) {

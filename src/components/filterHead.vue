@@ -9,7 +9,13 @@
         {{ sorts[index] }} <font-awesome-icon icon="angle-down" />
         <div class="list anima" :class="{ animation: isShowMask }">
           <ul>
-            <li v-for="(sort, index) in sorts" :key="index">{{ sort }}</li>
+            <li
+              v-for="(sort, index) in sorts"
+              :key="index"
+              @click="sortData(index)"
+            >
+              {{ sort }}
+            </li>
           </ul>
         </div>
       </div>
@@ -78,6 +84,7 @@ export default {
       }
     },
     ...mapMutations(['changeMaskStatus']),
+    sortData(index) {},
   },
 };
 </script>

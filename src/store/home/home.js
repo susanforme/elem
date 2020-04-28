@@ -19,6 +19,9 @@ const homeModule = {
     pushShopList(state, initData) {
       state.shopList.push(...initData);
     },
+    detailList(state, callback) {
+      state.shopList = callback(state.shopList);
+    },
   },
   actions: {
     changeDataStatus({ commit }, status) {
