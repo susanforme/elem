@@ -1,10 +1,6 @@
 <template>
   <div>
-    <transition
-      mode="out-in"
-      enter-active-class="animated zoomInUp"
-      leave-active-class="animated zoomOutUp"
-    >
+    <transition enter-active-class="all" leave-active-class="all" name="slide">
       <router-view />
     </transition>
   </div>
@@ -16,4 +12,30 @@ export default {
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.all {
+  transition: all linear 1s;
+}
+.anima {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.slide-enter {
+  transform: translateX(-100%);
+  .anima();
+}
+.slide-enter-to {
+  transform: translateX(0);
+  .anima();
+}
+.slide-leave {
+  transform: translateX(0);
+  .anima();
+}
+.slide-leave-to {
+  transform: translateX(100%);
+  .anima();
+}
+</style>
