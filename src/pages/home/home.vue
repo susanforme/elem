@@ -37,6 +37,7 @@ export default {
   data() {
     return {
       placeholder: '搜索饿了么商家,商品名称',
+      isLoading: true,
     };
   },
   components: {

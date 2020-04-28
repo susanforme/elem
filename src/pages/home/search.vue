@@ -6,9 +6,10 @@
       :startSearch="startSearch"
       :isFixed="isShow"
     ></search-area>
-    <p class="anima-father" v-if="isLoading">
-      <loading-anima :loadingStyle="{ color: '#0089dc' }"></loading-anima>
-    </p>
+    <loading-anima
+      :loadingStyle="{ color: '#0089dc' }"
+      v-if="isLoading"
+    ></loading-anima>
     <search-lists
       v-if="isShow"
       :searchList="searchList"
@@ -90,11 +91,6 @@ export default {
 .search {
   padding: 0 @padding;
   background-color: white;
-  .anima-father {
-    text-align: center;
-    padding: @padding 0;
-    height: 100vh;
-  }
 }
 .mask {
   position: fixed;

@@ -1,5 +1,7 @@
 <template>
-  <font-awesome-icon icon="spinner" class="anima" :style="loadingStyle" />
+  <p class="anima-father">
+    <font-awesome-icon icon="spinner" class="anima" :style="loadingStyle" />
+  </p>
 </template>
 
 <script>
@@ -27,5 +29,10 @@ export default {
 }
 .anima {
   animation: linear infinite 0.5s transfo;
+}
+.anima-father {
+  text-align: center;
+  padding: @padding 0;
+  height: 100vh;
 }
 </style>

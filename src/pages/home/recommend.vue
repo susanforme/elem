@@ -12,9 +12,10 @@
     >
       <div class="mask" v-if="isShowMask" @click="changeMask"></div>
     </transition>
-    <p class="anima-father" v-if="isLoading">
-      <loading-anima :loadingStyle="{ color: '#0089dc' }"></loading-anima>
-    </p>
+    <loading-anima
+      :loadingStyle="{ color: '#0089dc' }"
+      v-if="isLoading"
+    ></loading-anima>
     <shop-lists v-else :lists="recommendList"></shop-lists>
   </div>
 </template>
@@ -75,11 +76,6 @@ export default {
 .recommend {
   padding: 0 @padding;
   background-color: white;
-  .anima-father {
-    text-align: center;
-    padding: @padding 0;
-    height: 100vh;
-  }
 }
 .mask {
   position: fixed;
