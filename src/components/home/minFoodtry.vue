@@ -1,5 +1,5 @@
 <template>
-  <div class="foodtry">
+  <div class="foodtry" @click="goRecommend">
     <img :src="imgData.src" alt="" />
     <p>{{ imgData.title }}</p>
   </div>
@@ -10,6 +10,11 @@ export default {
   props: {
     imgData: {
       type: Object,
+    },
+  },
+  methods: {
+    goRecommend() {
+      this.$router.push('home/recommend');
     },
   },
 };

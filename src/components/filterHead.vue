@@ -173,12 +173,11 @@ function forward(propertyName, direction = 1) {
   height: 10vw;
 }
 .search {
-  position: fixed;
+  .fixed();
   top: 18vw;
-  left: 0;
-  right: 0;
-  background-color: white;
-  padding: 0 @padding;
-  z-index: 10;
+}
+.recommend {
+  .fixed();
+  top: 10vw;
 }
 </style>
