@@ -9,7 +9,11 @@
     <p class="anima-father" v-if="isLoading">
       <loading-anima :loadingStyle="{ color: '#0089dc' }"></loading-anima>
     </p>
-    <search-lists v-if="isShow" :searchList="searchList"></search-lists>
+    <search-lists
+      v-if="isShow"
+      :searchList="searchList"
+      :detailList="detailList"
+    ></search-lists>
     <transition
       enter-active-class="animated fadeIn"
       leave-active-class="animated fadeOut"
@@ -56,6 +60,7 @@ export default {
       'changeStatus',
     ]),
     ...mapMutations('home', ['changeMaskStatus']),
+    ...mapMutations('home/search', ['detailList']),
     startSearch() {
       const _this = this;
       this.isLoading = true;

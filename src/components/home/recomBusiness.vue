@@ -1,7 +1,7 @@
 <template>
   <div class="recom">
     <div class="ad"><span> 推荐商家</span></div>
-    <filter-header></filter-header>
+    <filter-header :detailList="detailList"></filter-header>
   </div>
 </template>
 
@@ -11,6 +11,12 @@ import filterHeader from '../filterHead';
 export default {
   components: {
     filterHeader,
+  },
+  props: {
+    detailList: {
+      type: Function,
+      required: true,
+    },
   },
 };
 </script>

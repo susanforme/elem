@@ -8,7 +8,7 @@
     <recom-food :foodtrys="foodtrys"></recom-food>
     <index-activity :activity="activity"></index-activity>
     <member-ad></member-ad>
-    <recom-business></recom-business>
+    <recom-business :detailList="detailList"></recom-business>
     <transition
       enter-active-class="animated fadeIn"
       leave-active-class="animated fadeOut"
@@ -54,6 +54,7 @@ export default {
       this.$router.push('/home/search');
     },
     ...mapMutations('home', ['changeMaskStatus']),
+    ...mapMutations('home/home', ['detailList']),
     ...mapActions('home/home', [
       'changeDataStatus',
       'initFoodtrys',

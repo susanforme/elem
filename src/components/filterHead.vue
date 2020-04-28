@@ -40,6 +40,10 @@ export default {
       type: String,
       default: 'test',
     },
+    detailList: {
+      type: Function,
+      required: true,
+    },
   },
   data() {
     return {
@@ -84,7 +88,9 @@ export default {
       }
     },
     ...mapMutations(['changeMaskStatus']),
-    sortData(index) {},
+    sortData(index) {
+      console.log(this.detailList);
+    },
   },
 };
 </script>

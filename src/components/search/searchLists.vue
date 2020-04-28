@@ -1,6 +1,10 @@
 <template>
   <div class="list">
-    <filter-head :isOtherPage="true" :otherPageClass="'search'"></filter-head>
+    <filter-head
+      :isOtherPage="true"
+      :otherPageClass="'search'"
+      :detailList="detailList"
+    ></filter-head>
     <shop-lists :lists="searchList"></shop-lists>
   </div>
 </template>
@@ -16,6 +20,10 @@ export default {
   props: {
     searchList: {
       type: Array,
+      required: true,
+    },
+    detailList: {
+      type: Function,
       required: true,
     },
   },
