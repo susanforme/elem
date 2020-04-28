@@ -3,6 +3,7 @@ const shoppingData = require('./shopping');
 const detailData = require('./detail');
 const homeData = require('./home.js');
 const searchData = require('./search');
+const recommendData = require('./recommend');
 
 const app = express();
 const port = 5050;
@@ -25,6 +26,11 @@ app.get('/home', (req, res) => {
 app.get('/search', (req, res) => {
   res.send(searchData);
 });
+
+app.get('/recommend', (req, res) => {
+  res.send(recommendData);
+});
+
 app.listen(port, () =>
   console.log(`Example app listening on http://127.0.0.1:${port} port!`)
 );
