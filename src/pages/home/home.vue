@@ -18,7 +18,7 @@
     <loading-anima v-if="isLoading"></loading-anima>
     <shop-lists
       :lists="shopList"
-      :apiUrl="'/shopping'"
+      apiUrl="/shopping"
       :pushData="pushShopList"
       v-else
     ></shop-lists>

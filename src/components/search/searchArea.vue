@@ -2,10 +2,7 @@
   <div>
     <div class="search-area">
       <div class="fa" :class="{ fixed: isFixed }">
-        <custom-input
-          v-model="text"
-          :placeholder="'输入商家名称'"
-        ></custom-input
+        <custom-input v-model="text" placeholder="输入商家名"></custom-input
         ><span @click="startSearch">搜索</span>
       </div>
       <hot-search v-if="isInittal" :startSearch="startSearch"></hot-search>

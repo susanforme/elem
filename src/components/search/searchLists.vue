@@ -2,7 +2,7 @@
   <div class="list">
     <filter-head
       :isOtherPage="true"
-      :otherPageClass="'search'"
+      otherPageClass="search"
       :detailList="detailList"
     ></filter-head>
     <shop-lists

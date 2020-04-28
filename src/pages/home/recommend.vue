@@ -4,7 +4,7 @@
     <filter-head
       :detailList="detailList"
       :isOtherPage="true"
-      :otherPageClass="'recommend'"
+      otherPageClass="recommend"
     ></filter-head>
     <transition
       enter-active-class="animated fadeIn"
