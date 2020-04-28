@@ -14,7 +14,7 @@ export default {
 
 <style lang="less" scoped>
 .all {
-  transition: all linear 1s;
+  transition: all ease-in 0.6s;
 }
 .anima {
   position: absolute;
