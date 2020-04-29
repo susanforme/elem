@@ -1,6 +1,6 @@
 <template>
   <div class="fa">
-    <div class="nav"><back-navigation></back-navigation></div>
+    <div class="nav"><back-navigation :goHome="goHome"></back-navigation></div>
     <div class="login">
       <div class="img"><img src="~@/assets/img/loginMainImg.png" alt="" /></div>
       <custom-input
@@ -42,6 +42,7 @@ export default {
     return {
       user: '',
       password: '',
+      goHome: false,
     };
   },
   methods: {
@@ -61,6 +62,11 @@ export default {
           }
         });
     },
+  },
+  created() {
+    if (this.$route.query.from === 'location') {
+      this.goHome = true;
+    }
   },
 };
 </script>

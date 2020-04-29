@@ -20,10 +20,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    goHome: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     goback() {
-      this.$router.back();
+      if (!this.goHome) {
+        this.$router.back();
+      } else {
+        this.$router.push('/');
+      }
     },
   },
 };

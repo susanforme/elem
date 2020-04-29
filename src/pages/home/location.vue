@@ -23,13 +23,20 @@ export default {
   components: {
     backNavigation,
   },
+  computed: {
+    ...mapState(['isLogin']),
+  },
   created() {
     const _this = this;
-    axios.get('/location').then((res) => {
-      const data = res.data;
-      _this.initLocaionList(data);
-      _this.changeStatus(200);
-    });
+    if (!this.isLogin) {
+      this.$router.push({ path: '/user/login', query: { from: 'location' } });
+    } else {
+      axios.get('/location').then((res) => {
+        const data = res.data;
+        _this.initLocaionList(data);
+        _this.changeStatus(200);
+      });
+    }
   },
   methods: {
     ...mapActions('home/location', ['initLocaionList', 'changeStatus']),
