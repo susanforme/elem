@@ -1,2 +1,2 @@
-const router = require('./home');
+const router = require('./user');
 module.exports = router;
