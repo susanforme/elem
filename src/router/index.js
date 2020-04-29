@@ -49,6 +49,20 @@ const routes = [
     path: '/user',
     name: 'User',
     component: () => import('@/views/User'),
+    children: [
+      {
+        path: '/',
+        component: () => import('@/pages/user/user'),
+      },
+      {
+        path: 'service',
+        component: () => import('@/pages/user/service'),
+      },
+      {
+        path: 'login',
+        component: () => import('@/pages/user/login'),
+      },
+    ],
   },
   {
     path: '/detail',
