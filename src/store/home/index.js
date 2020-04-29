@@ -6,14 +6,10 @@ import location from './location';
 const homeModule = {
   namespaced: true,
   state: {
-    myLocation: '四川成都',
     currentPosition: 0,
     isShowMask: false,
   },
   mutations: {
-    changeLocation(state, newLocation) {
-      state.location = newLocation;
-    },
     changeCurrentPosition(state, newPosition) {
       state.currentPosition = newPosition;
     },

@@ -77,7 +77,7 @@ export default {
   },
   computed: {
     ...mapState('home/home', ['shopList', 'status', 'foodtrys', 'activity']),
-    ...mapState('home', ['isShowMask', 'myLocation']),
+    ...mapState('home', ['isShowMask']),
   },
   created() {
     const _this = this;

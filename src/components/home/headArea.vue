@@ -1,8 +1,8 @@
 <template>
   <div class="head">
-    <div class="top">
+    <div class="top" @click="goLocation">
       <font-awesome-icon icon="map-marker-alt" />
-      {{ location }}
+      {{ location }}asdsad
     </div>
     <div class="btn-father" :class="{ fixed: isFixed }">
       <div class="btn" @click="jump">{{ data.placeholder }}</div>
@@ -41,6 +41,11 @@ export default {
       return false;
     },
     ...mapState(['currentPosition']),
+  },
+  methods: {
+    goLocation() {
+      this.$router.push('home/location');
+    },
   },
 };
 </script>

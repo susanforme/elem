@@ -35,10 +35,21 @@
 
 ## 2020/4/27
 
-一共耗时 24h
+24h
 
 1. 重构 filter 模块
 
 ## 2020/4/28
 
-在 filter 模块内部定义处理排序的函数,然后 vuex 中使用,设定 props 为 filter 链接的 vuex 地址
+28h
+
+1. 在 filter 模块内部定义处理排序的函数,然后 vuex 中使用,设定 props 为 filter 链接的 vuex 地址
+2. 处理商品列表加载
+3. 处理路由加载动画
+4. recommend子路由构建
+5. shoplist重构适应
+
+
+
+
+
