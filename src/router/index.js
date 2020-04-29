@@ -47,7 +47,6 @@ const routes = [
   },
   {
     path: '/user',
-    name: 'User',
     component: () => import('@/views/User'),
     children: [
       {

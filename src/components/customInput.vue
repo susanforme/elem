@@ -1,5 +1,12 @@
 <template>
-  <input type="text" :placeholder="placeholder" @input="model" class="input" />
+  <input
+    :type="type"
+    :placeholder="placeholder"
+    @input="model"
+    class="input"
+    :class="{ 'login-input': isLogin, focus: isFocusAnima }"
+    maxlength="16"
+  />
 </template>
 
 <script>
@@ -8,6 +15,18 @@ export default {
     placeholder: {
       type: String,
       default: '搜索',
+    },
+    isLogin: {
+      type: Boolean,
+      default: false,
+    },
+    type: {
+      type: String,
+      default: 'text',
+    },
+    isFocusAnima: {
+      type: Boolean,
+      default: false,
     },
   },
   model: {
@@ -36,6 +55,16 @@ input {
   color: rgb(121, 121, 121);
   &:disabled {
     background-color: white;
+  }
+}
+.login-input {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+.focus {
+  &:focus {
+    border: 1px solid #0089dc;
   }
 }
 </style>

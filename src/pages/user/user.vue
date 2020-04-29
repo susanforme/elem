@@ -2,23 +2,17 @@
   <div class="user">
     <head-area></head-area>
     <main-tab-bar></main-tab-bar>
+    <div class="height"></div>
   </div>
 </template>
 
 <script>
 import mainTabBar from '@/components/mainTabBar';
 import headArea from '@/components/user/headArea';
-import axios from '@/api';
-
 export default {
   components: {
     mainTabBar,
     headArea,
-  },
-  created() {
-    axios.post('/login').then((res) => {
-      console.log(res.data);
-    });
   },
 };
 </script>
@@ -26,5 +20,9 @@ export default {
 <style lang="less" scoped>
 .user {
   background-color: white;
+}
+.height {
+  height: 100vh;
+  background-color: #f5f5f5;
 }
 </style>

@@ -16,6 +16,7 @@ import {
   faFilter,
   faStar,
   faSpinner,
+  faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -26,6 +27,7 @@ library.add(
   faMapMarkerAlt,
   faAngleDown,
   faAngleLeft,
+  faAngleRight,
   faFilter,
   faStar,
   faSpinner
