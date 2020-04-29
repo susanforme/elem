@@ -11,7 +11,7 @@ export default new Vuex.Store({
       isLogin: false,
       userName: '',
       shippingAddress: {
-        address: 'test',
+        address: '',
         phoneNum: '',
         name: '',
       },

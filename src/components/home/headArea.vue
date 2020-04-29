@@ -2,7 +2,8 @@
   <div class="head">
     <div class="top" @click="goLocation">
       <font-awesome-icon icon="map-marker-alt" />
-      {{ location }}asdsad
+      <span class="change-location" v-if="location">{{ location }}</span>
+      <span class="change-location" v-else>请手动选择地址</span>
     </div>
     <div class="btn-father" :class="{ fixed: isFixed }">
       <div class="btn" @click="jump">{{ data.placeholder }}</div>
@@ -64,6 +65,12 @@ export default {
     padding: 1.5vw 5%;
     padding-top: 2vw;
     width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis; //溢出用省略号显示
+    white-space: nowrap;
+  }
+  .change-location {
+    margin-left: 1vw;
   }
   .btn-father {
     width: 90%;

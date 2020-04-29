@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="location">
     asdasdasd
   </div>
 </template>
@@ -10,4 +10,9 @@ export default {
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.location {
+  padding: 0 @padding;
+  background-color: white;
+}
+</style>
