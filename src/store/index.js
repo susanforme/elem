@@ -7,18 +7,30 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   //个人信息
   state: {
-    uesrMsg: {
-      isLogin: false,
-      userName: '',
-      shippingAddress: {
-        address: '',
-        phoneNum: '',
-        name: '',
-      },
+    isLogin: false,
+    userName: '',
+    phoneNum: '',
+    address: '',
+    name: '',
+  },
+  mutations: {
+    loginMsg(state, data) {
+      const { user, name } = data;
+      state.userName = user;
+      state.name = name;
+    },
+    changeLoginStatus(state, status) {
+      state.isLogin = status;
     },
   },
-  mutations: {},
-  actions: {},
+  actions: {
+    loginMsg({ commit }, data) {
+      commit('loginMsg', data);
+    },
+    changeLoginStatus({ commit }, status) {
+      commit('changeLoginStatus', status);
+    },
+  },
   modules: {
     home,
   },

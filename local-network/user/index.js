@@ -6,12 +6,17 @@ router.post('/login', (req, res) => {
     data += chunk;
   });
   req.on('end', () => {
-    if (!data) {
+    const body = JSON.parse(data);
+    const name = ['张飞', '刘备', '关羽', '诸葛亮', '周瑜'][
+      Math.round(Math.random() * 4)
+    ];
+    if (!body.user || !body.password) {
       return res.send({ status: 'error' });
     } else {
-      console.log(data);
-      const body = JSON.parse(data);
-      return res.send({ data: { ...body, password: '*****' }, status: 'ok' });
+      return res.send({
+        data: { ...body, password: '*****', name },
+        status: 'ok',
+      });
     }
   });
 });

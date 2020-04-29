@@ -22,7 +22,7 @@
         和
         <span>《隐私权政策》</span>
       </p>
-      <button class="login-button">登录</button>
+      <button class="login-button" @click="login">登录</button>
       <p class="about">关于我们</p>
     </div>
   </div>
@@ -31,6 +31,8 @@
 <script>
 import backNavigation from '@/components/backNavigation';
 import customInput from '@/components/customInput';
+import axios from '@/api';
+import { mapActions } from 'vuex';
 export default {
   components: {
     customInput,
@@ -41,6 +43,22 @@ export default {
       user: '',
       password: '',
     };
+  },
+  methods: {
+    ...mapActions(['loginMsg']),
+    login() {
+      const _this = this;
+      axios
+        .post('/login', { user: this.user, password: this.password })
+        .then((res) => {
+          const data = res.data;
+          if (data.status === 'ok') {
+            _this.loginMsg(data.data);
+          } else {
+            alert('账号或者密码错误');
+          }
+        });
+    },
   },
 };
 </script>

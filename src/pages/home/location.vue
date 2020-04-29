@@ -17,7 +17,7 @@
 <script>
 import backNavigation from '@/components/backNavigation';
 import axios from '@/api';
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 export default {
   name: 'location',
   components: {
@@ -33,6 +33,7 @@ export default {
   },
   methods: {
     ...mapActions('home/location', ['initLocaionList', 'changeStatus']),
+    ...mapState('home/location', ['locationList']),
   },
 };
 </script>
