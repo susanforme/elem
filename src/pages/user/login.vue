@@ -22,7 +22,7 @@
         和
         <span>《隐私权政策》</span>
       </p>
-      <button class="login">登录</button>
+      <button class="login-button">登录</button>
       <p class="about">关于我们</p>
     </div>
   </div>
@@ -58,7 +58,10 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 60vw;
+    height: 55vh;
+    > * {
+      flex: 1;
+    }
     .img {
       width: 45%;
       margin-bottom: 5%;
@@ -66,6 +69,29 @@ export default {
         width: 100%;
         height: 100%;
       }
+    }
+    .tips {
+      color: #797979;
+      font-size: 0.6933333333333334rem;
+      margin-bottom: 5%;
+      span {
+        color: #0089dc;
+      }
+    }
+    .login-button {
+      width: 100%;
+      border: none;
+      padding: 2% 0;
+      line-height: 100%;
+      color: white;
+      background: #4cd96f;
+      border-radius: 0.21333333333333335rem;
+      margin: 5% 0;
+      font-size: 0.8533333333333334rem;
+    }
+    .about {
+      color: #797979;
+      font-size: 0.6933333333333334rem;
     }
   }
 }

@@ -58,13 +58,13 @@ input {
   }
 }
 .login-input {
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
-  border-radius: 3px;
+  border: 0.05333333333333334rem solid #ddd;
+  margin-bottom: 1.0666666666666667rem;
+  border-radius: 0.16rem;
 }
 .focus {
   &:focus {
-    border: 1px solid #0089dc;
+    border: 0.05333333333333334rem solid #0089dc;
   }
 }
 </style>

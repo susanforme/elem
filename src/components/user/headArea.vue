@@ -65,12 +65,12 @@ export default {
     .main {
       .mix();
       font-weight: 700;
-      font-size: 20px;
+      font-size: 1.0666666666666667rem;
     }
     .other {
       .mix();
 
-      font-size: 12px;
+      font-size: 0.64rem;
     }
     .right {
       position: absolute;
