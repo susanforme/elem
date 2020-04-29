@@ -10,14 +10,14 @@ export default new Vuex.Store({
     isLogin: false,
     userName: '',
     phoneNum: '',
+    //选择的地址
     address: '',
-    name: '',
   },
   mutations: {
     loginMsg(state, data) {
-      const { user, name } = data;
+      const { user, phoneNum } = data;
       state.userName = user;
-      state.name = name;
+      state.phoneNum = phoneNum;
     },
     changeLoginStatus(state, status) {
       state.isLogin = status;

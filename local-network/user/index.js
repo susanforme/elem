@@ -7,14 +7,13 @@ router.post('/login', (req, res) => {
   });
   req.on('end', () => {
     const body = JSON.parse(data);
-    const name = ['张飞', '刘备', '关羽', '诸葛亮', '周瑜'][
-      Math.round(Math.random() * 4)
-    ];
+    const phoneNum =
+      '135' + Math.floor(Math.random() * (10 ** 8 - 10 ** 7) + 10 ** 7);
     if (!body.user || !body.password) {
       return res.send({ status: 'error' });
     } else {
       return res.send({
-        data: { ...body, password: '*****', name },
+        data: { ...body, password: '*****', phoneNum },
         status: 'ok',
       });
     }

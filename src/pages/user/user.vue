@@ -1,6 +1,6 @@
 <template>
   <div class="user">
-    <head-area></head-area>
+    <head-area v-bind="{ isLogin, userName, phoneNum }"></head-area>
     <main-tab-bar></main-tab-bar>
     <div class="height"></div>
   </div>
@@ -9,10 +9,15 @@
 <script>
 import mainTabBar from '@/components/mainTabBar';
 import headArea from '@/components/user/headArea';
+import { mapState } from 'vuex';
+
 export default {
   components: {
     mainTabBar,
     headArea,
+  },
+  computed: {
+    ...mapState(['isLogin', 'userName', 'phoneNum']),
   },
 };
 </script>

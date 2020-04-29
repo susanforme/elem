@@ -3,7 +3,7 @@
     <head-area
       :data="{ placeholder }"
       :jump="jump"
-      :location="uesrMsg.shippingAddress.address"
+      :location="address"
     ></head-area>
     <recom-food :foodtrys="foodtrys"></recom-food>
     <index-activity :activity="activity"></index-activity>
@@ -78,7 +78,7 @@ export default {
   computed: {
     ...mapState('home/home', ['shopList', 'status', 'foodtrys', 'activity']),
     ...mapState('home', ['isShowMask']),
-    ...mapState(['uesrMsg']),
+    ...mapState(['address']),
   },
   created() {
     const _this = this;

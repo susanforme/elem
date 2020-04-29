@@ -13,14 +13,25 @@
 
 <script>
 export default {
-  data() {
-    return {
-      isLogin: false,
-    };
+  props: {
+    isLogin: {
+      type: Boolean,
+      required: true,
+    },
+    phoneNum: {
+      type: String,
+      required: true,
+    },
+    userName: {
+      type: String,
+      required: true,
+    },
   },
   methods: {
     goLogin() {
-      this.$router.push('user/login');
+      if (!this.isLogin) {
+        this.$router.push('user/login');
+      }
     },
   },
   computed: {
@@ -31,7 +42,10 @@ export default {
           other: '登录以后享有更多特权',
         };
       }
-      return 1;
+      return {
+        main: this.userName,
+        other: this.phoneNum,
+      };
     },
   },
 };

@@ -45,7 +45,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(['loginMsg']),
+    ...mapActions(['loginMsg', 'changeLoginStatus']),
     login() {
       const _this = this;
       axios
@@ -54,6 +54,8 @@ export default {
           const data = res.data;
           if (data.status === 'ok') {
             _this.loginMsg(data.data);
+            _this.changeLoginStatus(true);
+            _this.$router.back();
           } else {
             alert('账号或者密码错误');
           }
