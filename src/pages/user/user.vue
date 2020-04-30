@@ -80,18 +80,18 @@ export default {
       justify-content: center;
       .red {
         font-weight: 600;
-        font-size: 12px;
+        font-size: 0.64rem;
         color: rgb(124, 124, 124);
       }
       .num {
-        font-size: 12px;
+        font-size: 0.64rem;
         color: rgb(106, 194, 11);
         .big {
-          font-size: 24px;
+          font-size: 1.28rem;
         }
       }
       &:first-child {
-        border-right: 1px solid #f5f5f5;
+        border-right: 0.05333333333333334rem solid #f5f5f5;
         box-sizing: content-box;
         > .num {
           color: rgb(255, 95, 62);
@@ -107,12 +107,12 @@ export default {
     line-height: 11.5vw;
     padding: 0 2 * @padding;
     background-color: white;
-    border-bottom: 1px solid rgba(236, 236, 236, 0.274);
+    border-bottom: 0.05333333333333334rem solid rgba(236, 236, 236, 0.274);
     position: relative;
-    font-size: 16px;
+    font-size: 0.8533333333333334rem;
     color: rgb(71, 71, 71);
     svg {
-      @font: 14px;
+      @font: 0.7466666666666667rem;
       position: absolute;
       font-size: @font;
       color: rgb(177, 177, 177);
@@ -122,7 +122,7 @@ export default {
   }
   > .privacy {
     text-align: center;
-    font-size: 15px;
+    font-size: 0.8rem;
     margin-top: 5vw;
     color: rgba(0, 136, 220, 0.562);
     font-weight: 700;

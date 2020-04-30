@@ -79,17 +79,17 @@ export default {
   > .position {
     padding: 1vw 2 * @padding;
     height: 15vw;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 0.05333333333333334rem solid #f5f5f5;
     display: flex;
     flex-direction: column;
     justify-content: center;
     .name {
       font-weight: 700;
-      font-size: 18px;
+      font-size: 0.96rem;
     }
     .address {
       color: rgb(151, 151, 151);
-      font-size: 15px;
+      font-size: 0.8rem;
       font-weight: 500;
     }
     .phone {
