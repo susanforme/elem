@@ -21,6 +21,7 @@
       {{ item }}
       <font-awesome-icon icon="angle-right" />
     </div>
+    <div class="privacy"><span @click="goService">隐私政策</span></div>
   </div>
 </template>
 
@@ -55,6 +56,9 @@ export default {
         return true;
       }
       return false;
+    },
+    goService() {
+      this.$router.push('/user/service');
     },
   },
 };
@@ -115,6 +119,13 @@ export default {
       top: 50%-@font;
       right: 2 * @padding;
     }
+  }
+  > .privacy {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 5vw;
+    color: rgba(0, 136, 220, 0.562);
+    font-weight: 700;
   }
 }
 </style>
