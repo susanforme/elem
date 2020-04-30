@@ -67,9 +67,9 @@ export default {
   h3,
   h4,
   h5 {
-    font-size: 16px;
-    margin-top: 24px;
-    margin-bottom: 6px;
+    font-size: 0.8533333333333334rem;
+    margin-top: 1.28rem;
+    margin-bottom: 0.32rem;
     color: #333;
     font-weight: 600;
   }
@@ -77,7 +77,7 @@ export default {
     max-width: 100%;
   }
   p {
-    margin: 20px 0;
+    margin: 1.0666666666666667rem 0;
   }
 }
 </style>
