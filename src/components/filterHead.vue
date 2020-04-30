@@ -90,17 +90,14 @@ export default {
     ...mapMutations(['changeMaskStatus']),
     sortData(index) {
       this.index = index;
-      window.scrollTo(0, 0);
       this.detailList(this.sorts[index].sort);
     },
     detailDistance() {
       this.index = 0;
-      window.scrollTo(0, 0);
       this.detailList(forward('distance'));
     },
     detailSail() {
       this.index = 0;
-      window.scrollTo(0, 0);
       this.detailList(forward('sales', -1));
     },
   },
