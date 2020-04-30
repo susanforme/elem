@@ -1,4 +1,6 @@
 const router = require('../home');
+//服务条款
+const serviceData = require('./service');
 
 router.post('/login', (req, res) => {
   let data = '';
@@ -18,6 +20,9 @@ router.post('/login', (req, res) => {
       });
     }
   });
+});
+router.get('/service', (req, res) => {
+  res.send(serviceData);
 });
 
 module.exports = router;
