@@ -53,6 +53,7 @@ export default {
     > .center {
       text-align: center;
       width: 100%;
+      font-weight: 700;
     }
   }
   .fixed {
@@ -62,6 +63,7 @@ export default {
     right: 0;
     padding: 0 @padding;
     z-index: 10;
+    background-color: white;
   }
   .position {
     width: 100%;

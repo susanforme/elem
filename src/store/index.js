@@ -22,6 +22,9 @@ export default new Vuex.Store({
     changeLoginStatus(state, status) {
       state.isLogin = status;
     },
+    changeAddress(state, data) {
+      state.address = data;
+    },
   },
   actions: {
     loginMsg({ commit }, data) {
