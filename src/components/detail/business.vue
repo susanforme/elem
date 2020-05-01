@@ -10,17 +10,19 @@
     </div>
     <div class="business">
       <p>
-        该商户已购买食品安全责任险，食品安全有保障
-        <!-- 这里采用的是supports -->
+        <span>{{ supports[0].icon_name }}</span> {{ supports[0].description }}
       </p>
     </div>
     <div class="business-img">
-      <div class="img">
-        <img src="" alt="" v-for="(album, index) in albums" :key="index" />
-        <span></span>
+      <h1 class="b-img">商家实景</h1>
+      <div class="img" v-for="(album, index) in albums" :key="index">
+        <img :src="trueImg(album.cover_image_hash)" alt="" />
+        <span>{{ album.name }}</span>
       </div>
     </div>
-    <div class="msg"></div>
+    <div class="msg">
+      商家信息
+    </div>
   </div>
 </template>
 
@@ -44,7 +46,7 @@ export default {
     flavors: {
       type: Array,
       default() {
-        return [];
+        return [{}];
       },
     },
     opening_hours: {
@@ -56,8 +58,13 @@ export default {
     supports: {
       type: Array,
       default() {
-        return [];
+        return [{}];
       },
+    },
+  },
+  methods: {
+    trueImg(src) {
+      return this.detailImgSrc(src);
     },
   },
 };
