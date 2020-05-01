@@ -36,7 +36,8 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(animated);
 Vue.config.productionTip = false;
-
+//挂在通用资源库cdn
+Vue.prototype.publicPath = 'https://cube.elemecdn.com/';
 new Vue({
   router,
   store,

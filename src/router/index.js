@@ -65,8 +65,17 @@ const routes = [
   },
   {
     path: '/detail',
-    name: 'Detail',
     component: () => import('@/views/Detail'),
+    children: [
+      {
+        path: '',
+        component: () => import('@/pages/detail/detail'),
+      },
+      {
+        path: 'check',
+        component: () => import('@/pages/detail/check'),
+      },
+    ],
   },
 ];
 

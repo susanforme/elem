@@ -1,5 +1,5 @@
 <template>
-  <div class="shop-father">
+  <div class="shop-father" @click="goDetail">
     <div class="shop">
       <img :src="imgSrc" alt="" />
       <div class="content">
@@ -63,6 +63,11 @@ export default {
   },
   components: {
     stars,
+  },
+  methods: {
+    goDetail() {
+      this.$router.push({ path: '/detail', query: { id: this.id } });
+    },
   },
 };
 </script>

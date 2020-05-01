@@ -87,9 +87,3 @@ const data = {
   ],
 };
 module.exports = data;
-/*
- * https://h5.ele.me/shop/#geohash=wm6n8n4q9n2g&id=E4540701855725334914&rank_id=undefined&spm=a2ogi.13147251.shopList.1
- * https://h5.ele.me/shop/#geohash=wm6n8n4q9n2g&id=E13678264740776869889&rank_id=undefined&spm=a2ogi.13147251.shopList.5
- * https://h5.ele.me/shop/#geohash=wm6n8n4q9n2g&id=E2284728002935988111&rank_id=undefined&spm=a2ogi.13147251.shopList.2
- *
- */
