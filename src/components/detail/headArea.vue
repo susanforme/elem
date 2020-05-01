@@ -88,7 +88,7 @@ export default {
   align-items: center;
   position: relative;
   padding-top: 6vw;
-  font-size: 12px;
+  font-size: 0.64rem;
   color: rgb(99, 98, 98);
   > .img {
     width: 20vw;
@@ -103,7 +103,7 @@ export default {
     width: 66%;
     white-space: nowrap;
     position: relative;
-    font-size: 20px;
+    font-size: 1.0666666666666667rem;
     font-weight: 700;
     color: rgb(48, 48, 48);
     text-align: center;
@@ -135,11 +135,11 @@ export default {
     > p {
       text-align: center;
       flex: 1;
-      font-size: 10px;
+      font-size: 0.5333333333333333rem;
     }
     > p:first-child {
       flex: 1.5;
-      font-size: 16px;
+      font-size: 0.8533333333333334rem;
       font-weight: 600;
     }
     &::before {
@@ -153,24 +153,26 @@ export default {
       height: 0.666667vw;
       background: #fff;
       transform: translateX(50%);
-      bottom: -1px;
+      bottom: -0.05333333333333334rem;
       border-bottom: none;
       border-radius: 1.333333vw 1.333333vw 0 0;
     }
     &::after {
       .asdasdw();
-      top: -1px;
+      top: -0.05333333333333334rem;
       border-top: none;
       border-radius: 0 0 1.333333vw 1.333333vw;
     }
   }
   > .activity0 {
     width: 80%;
+    position: relative;
+    margin-top: 2vw;
     > .man-jian {
       color: rgb(255, 75, 51);
-      border: 1px solid rgb(255, 201, 193);
-      font-size: 20px;
-      height: 30px;
+      border: 0.05333333333333334rem solid rgb(255, 201, 193);
+      font-size: 1.0666666666666667rem;
+      height: 1.6rem;
       text-align: center;
       transform: scale(0.5);
       display: inline-block;
@@ -180,11 +182,21 @@ export default {
       margin-left: -5%;
     }
     > .discount {
-      height: 30px;
-      display: inline-block;
+      height: 1.6rem;
       text-align: right;
-      line-height: 30px;
+      line-height: 1.6rem;
+      position: absolute;
+      text-align: right;
+      top: 0;
+      right: 0;
+      color: rgba(99, 98, 98, 0.575);
     }
+  }
+  > .tips {
+    color: rgba(99, 98, 98, 0.575);
+    text-align: left;
+    width: 80%;
+    margin-top: -2vw;
   }
 }
 </style>
