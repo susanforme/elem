@@ -13,7 +13,10 @@
     ></head-area>
     <tab-bar @changeBorder="changeBorder"></tab-bar>
     <keep-alive>
-      <component :is="components[index]"></component>
+      <component
+        :is="components[index]"
+        v-bind="dynamicComponetData"
+      ></component>
     </keep-alive>
   </div>
 </template>
@@ -46,6 +49,25 @@ export default {
   },
   computed: {
     ...mapState('detail', ['menu', 'rst']),
+    dynamicComponetData() {
+      const {
+        supports,
+        opening_hours,
+        flavors,
+        albums,
+        distance_text,
+        order_lead_time,
+      } = this.rst;
+      return {
+        supports,
+        opening_hours,
+        flavors,
+        albums,
+        distance_text,
+        order_lead_time,
+        //以上为商家组件所需数据
+      };
+    },
   },
   methods: {
     ...mapActions('detail', ['initMenu', 'initRst', 'changeStatus']),
