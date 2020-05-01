@@ -1,13 +1,11 @@
 <template>
-  <nav class="nav">
+  <nav class="nav" :style="{ backgroundImage: `url('${trueSrc}')` }">
     <back-navigation
       :customStyle="{
         backgroundColor: 'transparent ',
-        position: 'absolute',
         color: 'white',
       }"
     ></back-navigation>
-    <img :src="trueSrc" alt="" />
   </nav>
 </template>
 
@@ -23,7 +21,7 @@ export default {
   computed: {
     trueSrc() {
       if (this.imgSrc) {
-        return this.detailImgSrc(this.imgSrc);
+        return this.detailImgSrc(this.imgSrc, true);
       }
       return '';
     },
@@ -36,7 +34,20 @@ export default {
 
 <style lang="less" scoped>
 .nav {
-  background-color: rgba(119, 103, 137, 0.43);
   padding: 0 @padding;
+  height: 26.3vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(119, 103, 137, 0.43);
+  }
 }
 </style>

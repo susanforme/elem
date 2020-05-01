@@ -1,17 +1,29 @@
 <template>
   <div class="detail">
     <nav-area :imgSrc="rst['image_path']"></nav-area>
+    <head-area
+      v-bind="{
+        name: rst.name,
+        rating: rst.rating,
+        recent_order_num: rst.recent_order_num,
+        order_lead_time: rst.order_lead_time,
+        activities: rst.activities,
+        img: rst.image_path,
+      }"
+    ></head-area>
   </div>
 </template>
 
 <script>
 import navArea from '@/components/detail/navArea';
+import headArea from '@/components/detail/headArea';
 import axios from '@/api';
 import { mapState, mapActions } from 'vuex';
 
 export default {
   components: {
     navArea,
+    headArea,
   },
   computed: {
     ...mapState('detail', ['menu', 'rst']),
