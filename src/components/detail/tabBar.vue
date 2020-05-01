@@ -43,7 +43,7 @@ export default {
   > .child {
     flex: 1;
     text-align: center;
-    font-size: 16px;
+    font-size: 0.8533333333333334rem;
     font-weight: 600;
     color: rgba(133, 133, 133, 0.671);
     span {
@@ -53,7 +53,7 @@ export default {
   }
 }
 .active {
-  border-bottom: 3px solid rgb(35, 149, 255);
+  border-bottom: 0.16rem solid rgb(35, 149, 255);
   box-sizing: border-box;
   color: black;
 }
