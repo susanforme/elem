@@ -11,7 +11,7 @@
         img: rst.image_path,
       }"
     ></head-area>
-    <tab-bar></tab-bar>
+    <tab-bar @changeBorder="changeBorder"></tab-bar>
     <keep-alive>
       <component :is="components[index]"></component>
     </keep-alive>
@@ -49,6 +49,9 @@ export default {
   },
   methods: {
     ...mapActions('detail', ['initMenu', 'initRst', 'changeStatus']),
+    changeBorder(index) {
+      this.index = index;
+    },
   },
   created() {
     const id = this.$route.query.id;
