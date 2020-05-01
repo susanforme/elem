@@ -11,12 +11,21 @@
         img: rst.image_path,
       }"
     ></head-area>
+    <tab-bar></tab-bar>
+    <keep-alive>
+      <component :is="components[index]"></component>
+    </keep-alive>
   </div>
 </template>
 
 <script>
 import navArea from '@/components/detail/navArea';
 import headArea from '@/components/detail/headArea';
+import tabBar from '@/components/detail/tabBar';
+import orderEat from '@/components/detail/orderEat';
+import evalute from '@/components/detail/evalute';
+import business from '@/components/detail/business';
+
 import axios from '@/api';
 import { mapState, mapActions } from 'vuex';
 
@@ -24,6 +33,16 @@ export default {
   components: {
     navArea,
     headArea,
+    orderEat,
+    evalute,
+    business,
+    tabBar,
+  },
+  data() {
+    return {
+      components: ['orderEat', 'evalute', 'business'],
+      index: 0,
+    };
   },
   computed: {
     ...mapState('detail', ['menu', 'rst']),
