@@ -55,7 +55,6 @@ export default {
       if (this.status === 404) {
         axios.get('/location').then((res) => {
           const data = res.data;
-          console.log(data);
           _this.initLocaionList(data);
           _this.changeStatus(200);
         });

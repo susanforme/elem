@@ -32,7 +32,6 @@ export default {
   },
   computed: {
     isFixed() {
-      console.log();
       if (
         this.currentPosition >
         (document.documentElement.clientWidth / 100) * 11.5
