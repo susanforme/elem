@@ -3,6 +3,8 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import animated from 'animate.css';
+//引入链接处理函数
+import { detailImgSrc } from './tools';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
@@ -36,8 +38,8 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(animated);
 Vue.config.productionTip = false;
-//挂在通用资源库cdn
-Vue.prototype.publicPath = 'https://cube.elemecdn.com/';
+//挂载图片处理函数
+Vue.prototype.detailImgSrc = detailImgSrc;
 new Vue({
   router,
   store,
