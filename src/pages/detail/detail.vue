@@ -11,7 +11,10 @@
         img: rst.image_path,
       }"
     ></head-area>
-    <tab-bar @changeBorder="changeBorder"></tab-bar>
+    <tab-bar
+      @changeBorder="changeBorder"
+      :currentPosition="currentPosition"
+    ></tab-bar>
     <keep-alive>
       <component
         :is="components[index]"
@@ -49,6 +52,7 @@ export default {
   },
   computed: {
     ...mapState('detail', ['menu', 'rst']),
+    ...mapState('home', ['currentPosition']),
     dynamicComponetData() {
       const {
         supports,

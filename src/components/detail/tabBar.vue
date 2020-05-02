@@ -1,13 +1,16 @@
 <template>
-  <div class="tabbar">
-    <div
-      class="child"
-      v-for="(btn, index) in btns"
-      :key="index"
-      @click="changeBorder(index)"
-    >
-      <span :class="{ active: index === id }">{{ btn }}</span>
+  <div>
+    <div class="tabbar" ref="tabbar" :class="{ fixed: isFixed }">
+      <div
+        class="child"
+        v-for="(btn, index) in btns"
+        :key="index"
+        @click="changeBorder(index)"
+      >
+        <span :class="{ active: index === id }">{{ btn }}</span>
+      </div>
     </div>
+    <div class="position" v-if="isFixed"></div>
   </div>
 </template>
 
@@ -17,7 +20,21 @@ export default {
     return {
       btns: ['点餐', '评价', '商家'],
       id: 0,
+      top: 0,
     };
+  },
+  props: {
+    currentPosition: {
+      type: Number,
+    },
+  },
+  computed: {
+    isFixed() {
+      if (this.top !== 0 && this.currentPosition > this.top) {
+        return true;
+      }
+      return false;
+    },
   },
   methods: {
     changeBorder(index) {
@@ -25,10 +42,8 @@ export default {
       this.$emit('changeBorder', index);
     },
   },
-  props: {
-    test: {
-      type: Boolean,
-    },
+  mounted() {
+    this.top = this.$refs['tabbar'].offsetTop;
   },
 };
 </script>
@@ -58,5 +73,13 @@ export default {
   box-sizing: border-box;
   color: black;
   font-weight: 600;
+}
+.position {
+  .tabbar();
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  background-color: white;
 }
 </style>
