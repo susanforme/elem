@@ -3,6 +3,7 @@ const detail = {
   state: {
     menu: [],
     rst: {},
+    comments: {},
     status: 404,
   },
   mutations: {
@@ -11,6 +12,9 @@ const detail = {
     },
     initRst(state, data) {
       state.rst = data;
+    },
+    initComments(state, data) {
+      state.comments = data;
     },
     changeStatus(state, status) {
       state.status = status;
@@ -22,6 +26,9 @@ const detail = {
     },
     initRst({ commit }, payload) {
       commit('initRst', payload);
+    },
+    initComments({ commit }, payload) {
+      commit('initComments', payload);
     },
     changeStatus({ commit }, payload) {
       commit('changeStatus', payload);

@@ -1,17 +1,11 @@
 <template>
   <div>
-    evalue
+    score
   </div>
 </template>
 
 <script>
-export default {
-  props: {
-    comments: {
-      type: Object,
-    },
-  },
-};
+export default {};
 </script>
 
 <style lang="less" scoped></style>

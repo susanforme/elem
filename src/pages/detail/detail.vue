@@ -51,7 +51,7 @@ export default {
     };
   },
   computed: {
-    ...mapState('detail', ['menu', 'rst']),
+    ...mapState('detail', ['menu', 'rst', 'comments']),
     ...mapState('home', ['currentPosition']),
     dynamicComponetData() {
       const {
@@ -74,11 +74,18 @@ export default {
         is_stock_empty,
         address,
         //以上为商家组件所需数据
+        comments: this.comments,
+        //以上为评论所需数据
       };
     },
   },
   methods: {
-    ...mapActions('detail', ['initMenu', 'initRst', 'changeStatus']),
+    ...mapActions('detail', [
+      'initMenu',
+      'initRst',
+      'changeStatus',
+      'initComments',
+    ]),
     changeBorder(index) {
       this.index = index;
     },
@@ -93,6 +100,7 @@ export default {
         const data = res.data;
         _this.initMenu(data.menu);
         _this.initRst(data.rst);
+        _this.initComments(data.comments);
         _this.changeStatus(200);
       });
     }
