@@ -22,7 +22,9 @@
         和
         <span>《隐私权政策》</span>
       </p>
-      <button class="login-button" @click="login">登录</button>
+      <button class="login-button" @click="login" :disabled="isLogining">
+        {{ this.loginTips }}
+      </button>
       <p class="about">关于我们</p>
     </div>
   </div>
@@ -43,12 +45,22 @@ export default {
       user: '',
       password: '',
       goHome: false,
+      isLogining: false,
     };
+  },
+  computed: {
+    loginTips() {
+      if (this.isLogining) {
+        return '登录中';
+      }
+      return '登录';
+    },
   },
   methods: {
     ...mapActions(['loginMsg', 'changeLoginStatus']),
     login() {
       const _this = this;
+      this.isLogining = true;
       axios
         .post('/login', { user: this.user, password: this.password })
         .then((res) => {
@@ -60,9 +72,11 @@ export default {
           } else {
             alert('账号或者密码错误');
           }
+          _this.isLogining = false;
         })
         .catch((err) => {
           alert(err);
+          _this.isLogining = false;
         });
     },
   },
@@ -117,6 +131,9 @@ export default {
       border-radius: 0.21333333333333335rem;
       margin: 5% 0;
       font-size: 0.8533333333333334rem;
+      &:disabled {
+        background: rgb(165, 165, 165);
+      }
     }
     .about {
       color: #797979;
