@@ -11887,5 +11887,103 @@
   },
   "user": {
     "supervip_status": 2
+  },
+  "comments": {
+    "comments": [
+      {
+        "avatar": "",
+        "food_ratings": [
+          {
+            "food_id": 200101256828,
+            "rate_name": "肥肠血旺",
+            "rating": "띁",
+            "rating_text": "肥肠血旺 很赞！值得推荐凉拌酸辣猪蹄 不推荐，味道很怪，图片无凉粉，实物有很多凉粉，只吃到了蒜味儿、甜味儿（总之味道很怪）",
+            "reply": null,
+            "sku_id": 200000496973558684,
+            "sku_id_str": "200000496973558684",
+            "tags": null
+          },
+          {
+            "food_id": 200101273221,
+            "rate_name": "凉拌酸辣猪蹄",
+            "rating": "쯒",
+            "rating_text": "肥肠血旺 很赞！值得推荐凉拌酸辣猪蹄 不推荐，味道很怪，图片无凉粉，实物有很多凉粉，只吃到了蒜味儿、甜味儿（总之味道很怪）",
+            "reply": null,
+            "sku_id": 200000496965548956,
+            "sku_id_str": "200000496965548956",
+            "tags": null
+          }
+        ],
+        "highlights": null,
+        "highlights_v2": {
+          "凉拌酸辣猪蹄": 200000496965548956,
+          "肥肠血旺": 200000496973558684
+        },
+        "is_super_vip": false,
+        "is_taobao_vip": false,
+        "order_id": 0,
+        "order_images": [
+          {
+            "food_ids": [
+              200101256828
+            ],
+            "food_indexes": null,
+            "food_names": [
+              "肥肠血旺"
+            ],
+            "image_hash": "68a50b96e17635953541745769d77c1ajpeg",
+            "sku_ids": null
+          },
+          {
+            "food_ids": [
+              200101273221
+            ],
+            "food_indexes": null,
+            "food_names": [
+              "凉拌酸辣猪蹄"
+            ],
+            "image_hash": "bf49f2956b7f686f7474f6a9ff801af3jpeg",
+            "sku_ids": null
+          }
+        ],
+        "rating": 5,
+        "rating_text": "肥肠血旺 很赞！值得推荐凉拌酸辣猪蹄 不推荐，味道很怪，图片无凉粉，实物有很多凉粉，只吃到了蒜味儿、甜味儿（总之味道很怪）",
+        "reply": null,
+        "tags": [],
+        "time_spent_desc": "40分钟送达",
+        "username": "4*********0"
+      }
+    ],
+    "rating": {
+      "overall_score": 5,
+      "shop_score": 5
+    },
+    "tags": [
+      {
+        "count": 5,
+        "name": "全部",
+        "unsatisfied": false
+      },
+      {
+        "count": -1,
+        "name": "最新",
+        "unsatisfied": false
+      },
+      {
+        "count": 5,
+        "name": "好评",
+        "unsatisfied": false
+      },
+      {
+        "count": 0,
+        "name": "差评",
+        "unsatisfied": true
+      },
+      {
+        "count": 1,
+        "name": "有图",
+        "unsatisfied": false
+      }
+    ]
   }
 }

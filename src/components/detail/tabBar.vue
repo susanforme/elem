@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="tabbar" ref="tabbar" :class="{ fixed: isFixed }">
+    <div class="tabbar" ref="tabbar1" :class="{ fixed: isFixed }">
       <div
         class="child"
         v-for="(btn, index) in btns"
@@ -10,7 +10,7 @@
         <span :class="{ active: index === id }">{{ btn }}</span>
       </div>
     </div>
-    <div class="position" v-if="isFixed"></div>
+    <div class="position" v-show="isFixed" ref="tabbar2"></div>
   </div>
 </template>
 
@@ -20,7 +20,6 @@ export default {
     return {
       btns: ['点餐', '评价', '商家'],
       id: 0,
-      top: 0,
     };
   },
   props: {
@@ -35,15 +34,22 @@ export default {
       }
       return false;
     },
+    top() {
+      let result;
+      if (this.currentPosition) {
+        if (this.$refs['tabbar1'] && this.$refs['tabbar2']) {
+          result =
+            this.$refs['tabbar2'].offsetTop || this.$refs['tabbar1'].offsetTop;
+        }
+      }
+      return result;
+    },
   },
   methods: {
     changeBorder(index) {
       this.id = index;
       this.$emit('changeBorder', index);
     },
-  },
-  mounted() {
-    this.top = this.$refs['tabbar'].offsetTop;
   },
 };
 </script>
@@ -76,6 +82,7 @@ export default {
 }
 .position {
   .tabbar();
+  // border: none;
 }
 .fixed {
   position: fixed;

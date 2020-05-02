@@ -35634,5 +35634,139 @@
   },
   "user": {
     "supervip_status": 2
+  },
+  "comments": {
+    "comments": [
+      {
+        "avatar": "",
+        "food_ratings": [
+          {
+            "food_id": 200144790715,
+            "rate_name": "买烤鸭比萨送新奥尔良比萨",
+            "rating": "ꗄ",
+            "rating_text": "",
+            "reply": null,
+            "sku_id": 200000541523808544,
+            "sku_id_str": "200000541523808544",
+            "tags": null
+          }
+        ],
+        "highlights": null,
+        "highlights_v2": {},
+        "is_super_vip": true,
+        "is_taobao_vip": false,
+        "order_id": 0,
+        "order_images": null,
+        "rated_at": "쯒쯒몛ꗄ몛쯒쇚",
+        "rating": 5,
+        "rating_text": "3号",
+        "reply": null,
+        "tags": [],
+        "time_spent_desc": "40分钟送达",
+        "username": "4*******b"
+      },
+      {
+        "avatar": null,
+        "food_ratings": [
+          {
+            "food_id": 1580275745,
+            "rate_name": "酥炸鱿鱼[小份]A",
+            "rating": "ꗄ",
+            "rating_text": "",
+            "reply": null,
+            "sku_id": 200000389404225824,
+            "sku_id_str": "200000389404225824",
+            "tags": null
+          },
+          {
+            "food_id": 200126699581,
+            "rate_name": "意式肉酱面一人食A套餐",
+            "rating": "ꗄ",
+            "rating_text": "",
+            "reply": null,
+            "sku_id": 200000522998408480,
+            "sku_id_str": "200000522998408480",
+            "tags": null
+          }
+        ],
+        "highlights": null,
+        "highlights_v2": {},
+        "is_super_vip": true,
+        "is_taobao_vip": true,
+        "order_id": 0,
+        "order_images": null,
+        "rated_at": "쯒쯒몛ꗄ몛쯒쇚",
+        "rating": 5,
+        "rating_text": "3号",
+        "reply": null,
+        "tags": [],
+        "time_spent_desc": "",
+        "username": "匿名用户"
+      },
+      {
+        "avatar": null,
+        "food_ratings": [
+          {
+            "food_id": 200129198761,
+            "rate_name": "金枕榴莲多多比萨S[铁盘][普通装]",
+            "rating": "ꗄ",
+            "rating_text": "",
+            "reply": null,
+            "sku_id": 200000525550899488,
+            "sku_id_str": "200000525550899488",
+            "tags": null
+          }
+        ],
+        "highlights": null,
+        "highlights_v2": {},
+        "is_super_vip": true,
+        "is_taobao_vip": true,
+        "order_id": 0,
+        "order_images": null,
+        "rated_at": "쯒쯒몛ꗄ몛쯒쇚",
+        "rating": 5,
+        "rating_text": "3号",
+        "reply": null,
+        "tags": [],
+        "time_spent_desc": "",
+        "username": "匿名用户"
+      }
+    ],
+    "rating": {
+      "overall_score": 4.925000190734863,
+      "shop_score": 4.925000190734863
+    },
+    "tags": [
+      {
+        "count": 2073,
+        "name": "全部",
+        "unsatisfied": false
+      },
+      {
+        "count": -1,
+        "name": "最新",
+        "unsatisfied": false
+      },
+      {
+        "count": 2015,
+        "name": "好评",
+        "unsatisfied": false
+      },
+      {
+        "count": 28,
+        "name": "差评",
+        "unsatisfied": true
+      },
+      {
+        "count": 133,
+        "name": "有图",
+        "unsatisfied": false
+      },
+      {
+        "count": 12,
+        "name": "送货快",
+        "unsatisfied": false
+      }
+    ]
   }
 }
