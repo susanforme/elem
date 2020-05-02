@@ -57,6 +57,7 @@ export default {
         albums,
         distance_text,
         order_lead_time,
+        is_stock_empty,
       } = this.rst;
       return {
         supports,
@@ -65,6 +66,7 @@ export default {
         albums,
         distance_text,
         order_lead_time,
+        is_stock_empty,
         //以上为商家组件所需数据
       };
     },

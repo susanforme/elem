@@ -7,6 +7,7 @@ module.exports = {
         globalVars: {
           '@primary': '#0089dc',
           '@padding': '2vw',
+          '@gray': 'rgba(99, 99, 99, 0.938)',
         },
       },
     },

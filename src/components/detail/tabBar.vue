@@ -40,12 +40,13 @@ export default {
   display: flex;
   width: 100%;
   height: 9vw;
+  border-bottom: 1px solid rgba(179, 179, 179, 0.267);
   > .child {
     flex: 1;
     text-align: center;
     font-size: 0.8533333333333334rem;
-    font-weight: 600;
-    color: rgba(133, 133, 133, 0.671);
+    font-weight: 500;
+    color: rgba(99, 99, 99, 0.938);
     span {
       display: inline-block;
       height: 100%;
@@ -56,5 +57,6 @@ export default {
   border-bottom: 0.16rem solid rgb(35, 149, 255);
   box-sizing: border-box;
   color: black;
+  font-weight: 600;
 }
 </style>
