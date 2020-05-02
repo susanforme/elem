@@ -24,7 +24,28 @@
       </div>
     </div>
     <div class="msg">
-      商家信息
+      <p class="title">商家信息</p>
+      <p class="no">暂无简介</p>
+      <p class="child">
+        <span class="tip">品类</span>
+        <span class="right">{{ flavors[0].name }}</span>
+      </p>
+      <p class="child">
+        <span class="tip">商家电话</span>
+        <span class="right phone">联系电话</span>
+      </p>
+      <p class="child address">
+        <span class="tip">地址</span> <span class="right">{{ address }}</span>
+      </p>
+      <p class="child">
+        <span class="tip">营业时间</span>
+        <span class="right">{{ opening_hours[0] }}</span>
+      </p>
+    </div>
+    <div class="ablity">
+      <p class="child">
+        营业资质
+      </p>
     </div>
   </div>
 </template>
@@ -47,16 +68,22 @@ export default {
       },
     },
     flavors: {
+      //种类
       type: Array,
       default() {
         return [{}];
       },
     },
     opening_hours: {
+      //开放时间
       type: Array,
       default() {
         return [];
       },
+    },
+    address: {
+      type: String,
+      default: '',
     },
     supports: {
       type: Array,
@@ -80,11 +107,11 @@ export default {
 <style lang="less" scoped>
 .all-title {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 0.8rem;
   padding-bottom: 1.5 * @padding;
 }
 .all-content {
-  font-size: 14px;
+  font-size: 0.7466666666666667rem;
   color: @gray;
   width: 80%;
 }
@@ -99,7 +126,7 @@ export default {
     .all-father();
     > p {
       padding-bottom: 1.5 * @padding;
-      font-size: 16px;
+      font-size: 0.8533333333333334rem;
     }
     > p.msg {
       .all-content();
@@ -119,8 +146,8 @@ export default {
       padding-bottom: 2 * @padding;
       > span {
         display: inline-block;
-        border: 1px solid @gray;
-        font-size: 12px;
+        border: 0.05333333333333334rem solid @gray;
+        font-size: 0.64rem;
       }
     }
   }
@@ -146,12 +173,62 @@ export default {
         left: 0;
         width: 22vw;
         height: 6vw;
-        font-size: 14px;
+        font-size: 0.7466666666666667rem;
         text-align: center;
         color: white;
         background-color: black;
         opacity: 0.4;
       }
+    }
+  }
+  > .msg {
+    .all-father();
+    @height: 14vw;
+    > .title {
+      .all-title();
+    }
+    > .no {
+      .all-content();
+      height: @height;
+      line-height: @height;
+    }
+    > .child {
+      position: relative;
+      .all-content();
+      width: 100%;
+      height: @height;
+      line-height: @height;
+      border-top: 0.05333333333333334rem solid rgba(179, 179, 179, 0.171);
+      > .right {
+        float: right;
+        width: 70%;
+        text-align: right;
+      }
+      > .tip {
+        color: black;
+        font-weight: 700;
+      }
+      > .phone {
+        color: @primary;
+      }
+    }
+    > .child.address {
+      > .right {
+        line-height: 1/2 * @height;
+      }
+    }
+  }
+  .ablity {
+    .all-father();
+    > .child {
+      @height: 8vw;
+      position: relative;
+      .all-content();
+      width: 100%;
+      height: @height;
+      line-height: @height;
+      color: black;
+      font-weight: 700;
     }
   }
 }

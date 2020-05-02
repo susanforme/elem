@@ -40,7 +40,7 @@ export default {
   display: flex;
   width: 100%;
   height: 9vw;
-  border-bottom: 1px solid rgba(179, 179, 179, 0.267);
+  border-bottom: 0.05333333333333334rem solid rgba(179, 179, 179, 0.267);
   > .child {
     flex: 1;
     text-align: center;

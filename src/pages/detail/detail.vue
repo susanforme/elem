@@ -58,6 +58,7 @@ export default {
         distance_text,
         order_lead_time,
         is_stock_empty,
+        address,
       } = this.rst;
       return {
         supports,
@@ -67,6 +68,7 @@ export default {
         distance_text,
         order_lead_time,
         is_stock_empty,
+        address,
         //以上为商家组件所需数据
       };
     },
