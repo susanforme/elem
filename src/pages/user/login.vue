@@ -60,6 +60,9 @@ export default {
           } else {
             alert('账号或者密码错误');
           }
+        })
+        .catch((err) => {
+          alert(err);
         });
     },
   },
