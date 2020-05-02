@@ -30,8 +30,9 @@ export default {
   methods: {
     goLogin() {
       if (!this.isLogin) {
-        this.$router.push('user/login');
+        return this.$router.push('user/login');
       }
+      this.$router.push('/user/profile');
     },
   },
   computed: {

@@ -61,6 +61,10 @@ const routes = [
         path: 'login',
         component: () => import('@/pages/user/login'),
       },
+      {
+        path: 'profile',
+        component: () => import('@/pages/user/profile'),
+      },
     ],
   },
   {
