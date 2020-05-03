@@ -63,6 +63,7 @@ export default {
         order_lead_time,
         is_stock_empty,
         address,
+        posters,
       } = this.rst;
       return {
         supports,
@@ -76,6 +77,8 @@ export default {
         //以上为商家组件所需数据
         comments: this.comments,
         //以上为评论所需数据
+        posters,
+        //以上为主页所需
       };
     },
   },
