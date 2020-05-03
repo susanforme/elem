@@ -78,10 +78,10 @@ export default {
     top: 0;
     height: 100%;
     color: rgba(161, 161, 161, 0.616);
-    font-size: 16px;
+    font-size: 0.8533333333333334rem;
   }
   .title {
-    font-size: 18px;
+    font-size: 0.96rem;
     font-weight: 700;
     color: rgba(39, 39, 39, 0.822);
   }
@@ -91,7 +91,7 @@ export default {
   > p.p {
     padding: 1/2 * @padding 2 * @padding;
     padding-top: @padding;
-    font-size: 14px;
+    font-size: 0.7466666666666667rem;
     color: rgba(161, 161, 161, 0.616);
   }
   > div.head-img {
@@ -116,7 +116,7 @@ export default {
     height: 14vw;
     line-height: 14vw;
     text-align: center;
-    font-size: 18px;
+    font-size: 0.96rem;
     font-weight: 700;
     color: #ff5339;
   }

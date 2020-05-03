@@ -52,7 +52,7 @@ export default {
   height: 24vw;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
+  font-size: 0.64rem;
   color: @gray;
   > * {
     flex: 1;
@@ -67,7 +67,7 @@ export default {
     }
   }
   > .score-head {
-    font-size: 32px;
+    font-size: 1.7066666666666668rem;
     font-weight: 600;
     color: #ff6000;
     flex: 1.5;
@@ -75,16 +75,16 @@ export default {
   .overall,
   .pack {
     > p.child {
-      font-size: 18px;
+      font-size: 0.96rem;
       font-weight: 700;
     }
   }
   > .divery {
     flex: 1.3;
-    border-left: 1px solid rgba(202, 202, 202, 0.616);
+    border-left: 0.05333333333333334rem solid rgba(202, 202, 202, 0.616);
     > .child {
       font-weight: 700;
-      font-size: 18px;
+      font-size: 0.96rem;
     }
   }
 }
