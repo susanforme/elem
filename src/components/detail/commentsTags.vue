@@ -1,14 +1,14 @@
 <template>
   <div class="fa">
     <div class="tags">
-      <div
+      <span
         class="tag"
         v-for="(tag, index) in tags"
         :key="index"
         :class="{ gray: tag.name === '差评' }"
       >
         {{ tag.name }} {{ tag.count | trueCount }}
-      </div>
+      </span>
     </div>
   </div>
 </template>
@@ -39,14 +39,14 @@ export default {
 .tags {
   margin-top: 2vw;
   display: flex;
-  height: 7vw;
-  line-height: 7vw;
-  padding: 2 * @padding 0;
+  padding: 1 * @padding 0;
   border-bottom: 1px solid @border;
+  flex-wrap: wrap;
   > .tag {
     box-sizing: border-box;
     font-size: 12px;
-    padding: 0 3vw;
+    padding: 2vw 3vw;
+    margin: @padding;
     margin-right: 2vw;
     background-color: #ebf5ff;
     border-radius: 3px;
