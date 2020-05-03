@@ -1,7 +1,9 @@
 <template>
-  <div class="main-menu">
-    <menu-category :category="category"></menu-category>
-    <scroll-menu></scroll-menu>
+  <div>
+    <div class="main-menu">
+      <menu-category :category="category"></menu-category>
+      <scroll-menu></scroll-menu>
+    </div>
   </div>
 </template>
 

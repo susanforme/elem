@@ -1,18 +1,23 @@
 <template>
-  <div class="category">
-    <a
-      :href="'#' + item.id"
-      class="go"
-      v-for="(item, index) in category"
-      :key="index"
-      :class="{ active: item.id === trueId }"
-      @click="goOther(item.id)"
-      >{{ item.name }}</a
-    >
+  <div class="fa">
+    <div class="category" ref="menuCategroy" :class="{ fixed: isFixed }">
+      <a
+        :href="'#' + item.id"
+        class="go"
+        v-for="(item, index) in category"
+        :key="index"
+        :class="{ active: item.id === trueId }"
+        @click="goOther(item.id)"
+        >{{ item.name }}</a
+      >
+    </div>
+    <div class="position" v-show="isFixed"></div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   props: {
     category: {
@@ -25,6 +30,7 @@ export default {
   data() {
     return {
       id: 0,
+      top: 0,
     };
   },
   computed: {
@@ -37,20 +43,36 @@ export default {
       }
       return this.category[0].id;
     },
+    ...mapState('home', ['currentPosition']),
+    isFixed() {
+      if (this.top !== 0 && this.currentPosition > this.top) {
+        return true;
+      }
+      return false;
+    },
   },
   methods: {
     goOther(id) {
       this.id = id;
     },
   },
+  mounted() {
+    console.log(this.$refs['menuCategroy'].offsetTop);
+    this.top =
+      this.$refs['menuCategroy'].offsetTop -
+      0.14 * document.documentElement.clientWidth;
+  },
 };
 </script>
 
 <style lang="less" scoped>
+.fa {
+  flex: 1;
+}
 .category {
   font-size: 12px;
   height: 100vh;
-  flex: 1;
+  width: 100%;
   background-color: #f5f5f5;
   @height: 4vh;
   .go {
@@ -75,5 +97,15 @@ export default {
       font-weight: 550;
     }
   }
+}
+.fixed {
+  .category();
+  position: fixed;
+  top: 14vw;
+  z-index: 3;
+  width: 22%;
+}
+.position {
+  .category();
 }
 </style>

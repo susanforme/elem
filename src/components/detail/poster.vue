@@ -26,6 +26,7 @@ export default {
 <style lang="less" scoped>
 .poster {
   padding: @padding 2 * @padding;
+  height: 23.2vw;
   > img {
     width: 100%;
   }
