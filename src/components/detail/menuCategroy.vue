@@ -1,14 +1,14 @@
 <template>
   <div class="category">
-    <div
-      class="child"
+    <a
+      :href="'#' + item.id"
+      class="go"
       v-for="(item, index) in category"
       :key="index"
       :class="{ active: item.id === trueId }"
       @click="goOther(item.id)"
+      >{{ item.name }}</a
     >
-      <a :href="'#' + item.id" class="go">{{ item.name }}</a>
-    </div>
   </div>
 </template>
 
@@ -52,25 +52,22 @@ export default {
   height: 100vh;
   flex: 1;
   background-color: #f5f5f5;
-  .child {
-    @height: 4vh;
-    height: @height;
+  @height: 4vh;
+  .go {
     padding: 1.5 * @padding;
     padding-right: @padding;
-    .go {
-      text-decoration: none;
-      outline: none;
-      display: block;
-      width: 100%;
-      height: @height;
-      line-height: @height;
-      overflow: hidden;
-      color: rgb(107, 106, 106);
-      &:active {
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      }
+    text-decoration: none;
+    outline: none;
+    display: block;
+    height: @height;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgb(107, 106, 106);
+    &:active {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
   }
+
   > .active {
     background-color: white;
     > .go {
