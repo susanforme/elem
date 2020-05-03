@@ -1,12 +1,14 @@
 <template>
-  <div class="tags">
-    <div
-      class="tag"
-      v-for="(tag, index) in tags"
-      :key="index"
-      :class="{ gray: tag.name === '差评' }"
-    >
-      {{ tag.name }} {{ tag.count | trueCount }}
+  <div class="fa">
+    <div class="tags">
+      <div
+        class="tag"
+        v-for="(tag, index) in tags"
+        :key="index"
+        :class="{ gray: tag.name === '差评' }"
+      >
+        {{ tag.name }} {{ tag.count | trueCount }}
+      </div>
     </div>
   </div>
 </template>
@@ -30,13 +32,17 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.tags {
+.fa {
+  padding: 0 2 * @padding;
   background-color: white;
+}
+.tags {
   margin-top: 2vw;
   display: flex;
   height: 7vw;
   line-height: 7vw;
-  padding: 2 * @padding;
+  padding: 2 * @padding 0;
+  border-bottom: 1px solid @border;
   > .tag {
     box-sizing: border-box;
     font-size: 12px;

@@ -81,7 +81,7 @@ export default {
   }
   > .divery {
     flex: 1.3;
-    border-left: 0.05333333333333334rem solid rgba(202, 202, 202, 0.616);
+    border-left: 0.05333333333333334rem solid @border;
     > .child {
       font-weight: 700;
       font-size: 0.96rem;
