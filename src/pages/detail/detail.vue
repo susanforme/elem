@@ -78,6 +78,7 @@ export default {
         comments: this.comments,
         //以上为评论所需数据
         posters,
+        menu: this.menu,
         //以上为主页所需
       };
     },
