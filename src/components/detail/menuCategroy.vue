@@ -96,7 +96,7 @@ export default {
   position: fixed;
   top: 14vw;
   z-index: 3;
-  width: 22%;
+  width: 20.8%;
 }
 .position {
   .category();
