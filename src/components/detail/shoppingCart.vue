@@ -1,20 +1,26 @@
 <template>
   <div class="shopping-cart">
+    <!-- 顶部购物车已经加入的内容使用 transition 实现动画,初始高度为0 -->
     <div class="top"></div>
+    <!-- 购物车图案 -->
     <div class="car"></div>
     <div class="price">
-      {{ lowestPrice }}
+      <p class="low">{{ lowestPrice }}</p>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   props: {
     lowestPrice: {
       type: Number,
       default: 0,
     },
+  },
+  computed: {
+    ...mapState('detail', 'shoppingCart'),
   },
 };
 </script>
