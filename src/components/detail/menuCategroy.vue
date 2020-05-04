@@ -31,6 +31,7 @@ export default {
     return {
       id: 0,
       top: 0,
+      wasItRight: false,
     };
   },
   computed: {
@@ -57,10 +58,17 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$refs['menuCategroy'].offsetTop);
     this.top =
       this.$refs['menuCategroy'].offsetTop -
       0.14 * document.documentElement.clientWidth;
+  },
+  watch: {
+    isFixed() {
+      if (this.isFixed) {
+        this.wasItRight = true;
+      }
+    },
+    immediate: true,
   },
 };
 </script>
