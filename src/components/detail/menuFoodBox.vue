@@ -9,6 +9,9 @@
         月售{{ food.month_sales }}份 好评率{{ food.satisfy_rate }}%
       </p>
       <p class="bottom">$ {{ food.origin_price }}</p>
+      <p class="right">
+        <embed src="~@/assets/img/add.svg" type="image/svg+xml" />
+      </p>
     </div>
   </div>
 </template>
