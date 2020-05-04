@@ -9,7 +9,7 @@
         月售{{ food.month_sales }}份 好评率{{ food.satisfy_rate }}%
       </p>
       <p class="bottom">$ {{ food.origin_price }}</p>
-      <p class="right">
+      <p class="right" @click="checkData(food)">
         <img src="~@/assets/img/add.svg" alt="" />
       </p>
     </div>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 export default {
   props: {
     food: {
@@ -29,6 +30,12 @@ export default {
   methods: {
     detailSrc(src) {
       return this.detailImgSrc(src);
+    },
+    ...mapMutations('detail', ['pushShoppingCart']),
+    checkData(food) {
+      if (Object.keys(food).length > 0) {
+        this.pushShoppingCart(food);
+      }
     },
   },
 };
