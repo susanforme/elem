@@ -40,16 +40,16 @@ export default {
   margin-top: 2vw;
   display: flex;
   padding: 1 * @padding 0;
-  border-bottom: 1px solid @border;
+  border-bottom: 0.05333333333333334rem solid @border;
   flex-wrap: wrap;
   > .tag {
     box-sizing: border-box;
-    font-size: 12px;
+    font-size: 0.64rem;
     padding: 2vw 3vw;
     margin: @padding;
     margin-right: 2vw;
     background-color: #ebf5ff;
-    border-radius: 3px;
+    border-radius: 0.16rem;
     color: @gray;
   }
   > .tag:first-child {

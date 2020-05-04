@@ -33,7 +33,7 @@ export default {
   width: 100%;
   > .title {
     color: @gray;
-    font-size: 14px;
+    font-size: 0.7466666666666667rem;
     padding-bottom: 1vw;
   }
 }

@@ -48,10 +48,10 @@ export default {
   }
   > .content {
     flex: 3;
-    font-size: 12px;
+    font-size: 0.64rem;
     position: relative;
     > p.title {
-      font-size: 15px;
+      font-size: 0.8rem;
       font-weight: 700;
       padding-bottom: 1vw;
     }
@@ -61,7 +61,7 @@ export default {
     > p.bottom {
       position: absolute;
       bottom: 0;
-      font-size: 14px;
+      font-size: 0.7466666666666667rem;
       color: rgb(255, 83, 57);
     }
     > p.right {

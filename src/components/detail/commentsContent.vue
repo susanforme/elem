@@ -62,7 +62,7 @@ export default {
   background-color: white;
   padding: 2 * @padding;
   > * {
-    font-size: 14px;
+    font-size: 0.7466666666666667rem;
   }
   > .comment {
     display: flex;
@@ -87,7 +87,7 @@ export default {
     text-align: center;
     margin-top: 5vw;
     color: @gray;
-    font-size: 12px;
+    font-size: 0.64rem;
   }
 }
 </style>

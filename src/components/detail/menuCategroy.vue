@@ -63,7 +63,7 @@ export default {
   flex: 1;
 }
 .category {
-  font-size: 12px;
+  font-size: 0.64rem;
   height: 100vh;
   width: 100%;
   background-color: #f5f5f5;

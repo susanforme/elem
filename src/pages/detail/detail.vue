@@ -25,6 +25,7 @@
           v-bind="dynamicComponetData"
         ></component>
       </keep-alive>
+      <shopping-cart></shopping-cart>
     </div>
   </div>
 </template>
@@ -36,6 +37,7 @@ import tabBar from '@/components/detail/tabBar';
 import orderEat from '@/components/detail/orderEat';
 import evalute from '@/components/detail/evalute';
 import business from '@/components/detail/business';
+import shoppingCart from '@/components/detail/shoppingCart';
 
 import axios from '@/api';
 import { mapState, mapActions } from 'vuex';
@@ -48,6 +50,7 @@ export default {
     evalute,
     business,
     tabBar,
+    shoppingCart,
   },
   data() {
     return {
