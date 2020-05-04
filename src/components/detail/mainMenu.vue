@@ -21,11 +21,6 @@ export default {
       },
     },
   },
-  data() {
-    return {
-      top: 0,
-    };
-  },
   computed: {
     category() {
       if (this.menu.length <= 1) {
@@ -49,11 +44,15 @@ export default {
       }
       return false;
     },
-  },
-  mounted() {
-    this.top =
-      this.$refs['menuCategroy'].offsetTop -
-      0.14 * document.documentElement.clientWidth;
+    top() {
+      if (this.currentPosition) {
+        return (
+          this.$refs['menuCategroy'].offsetTop -
+          0.14 * document.documentElement.clientWidth
+        );
+      }
+      return 0;
+    },
   },
   components: {
     menuCategory,
