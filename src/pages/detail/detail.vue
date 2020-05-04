@@ -25,7 +25,9 @@
           v-bind="dynamicComponetData"
         ></component>
       </keep-alive>
-      <shopping-cart></shopping-cart>
+      <shopping-cart
+        :lowestPrice="rst.piecewise_agent_fee.rules[0].price"
+      ></shopping-cart>
     </div>
   </div>
 </template>
