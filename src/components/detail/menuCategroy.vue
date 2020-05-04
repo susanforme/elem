@@ -17,7 +17,7 @@
 
 <script>
 import { mapState } from 'vuex';
-
+//在isfixed为true的时候用个data缓存true
 export default {
   props: {
     category: {
