@@ -1,26 +1,31 @@
 <template>
-  <div class="detail">
-    <nav-area :imgSrc="rst['image_path']"></nav-area>
-    <head-area
-      v-bind="{
-        name: rst.name,
-        rating: rst.rating,
-        recent_order_num: rst.recent_order_num,
-        order_lead_time: rst.order_lead_time,
-        activities: rst.activities,
-        img: rst.image_path,
-      }"
-    ></head-area>
-    <tab-bar
-      @changeBorder="changeBorder"
-      :currentPosition="currentPosition"
-    ></tab-bar>
-    <keep-alive>
-      <component
-        :is="components[index]"
-        v-bind="dynamicComponetData"
-      ></component>
-    </keep-alive>
+  <div>
+    <div class="loading" v-if="isLoading">
+      <img src="~@/assets/img/detailLoadingAnima.svg" alt="" />
+    </div>
+    <div class="detail" v-else>
+      <nav-area :imgSrc="rst['image_path']"></nav-area>
+      <head-area
+        v-bind="{
+          name: rst.name,
+          rating: rst.rating,
+          recent_order_num: rst.recent_order_num,
+          order_lead_time: rst.order_lead_time,
+          activities: rst.activities,
+          img: rst.image_path,
+        }"
+      ></head-area>
+      <tab-bar
+        @changeBorder="changeBorder"
+        :currentPosition="currentPosition"
+      ></tab-bar>
+      <keep-alive>
+        <component
+          :is="components[index]"
+          v-bind="dynamicComponetData"
+        ></component>
+      </keep-alive>
+    </div>
   </div>
 </template>
 
@@ -48,6 +53,7 @@ export default {
     return {
       components: ['orderEat', 'evalute', 'business'],
       index: 0,
+      isLoading: true,
     };
   },
   computed: {
@@ -106,10 +112,17 @@ export default {
         _this.initRst(data.rst);
         _this.initComments(data.comments);
         _this.changeStatus(200);
+        _this.isLoading = false;
       });
     }
   },
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.loading {
+  width: 100%;
+  background-color: white;
+  height: 100vh;
+}
+</style>

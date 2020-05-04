@@ -2,12 +2,11 @@
   <div class="fa">
     <div class="category" :class="{ fixed: isFixed }">
       <a
-        :href="'#' + item.id"
         class="go"
         v-for="(item, index) in category"
         :key="index"
         :class="{ active: item.id === trueId }"
-        @click="goOther(item.id)"
+        @click="goOther($event, item.id)"
         >{{ item.name }}</a
       >
     </div>
@@ -46,7 +45,13 @@ export default {
     },
   },
   methods: {
-    goOther(id) {
+    goOther(e, id) {
+      e.preventDefault();
+      document.documentElement.scrollTo(
+        0,
+        document.getElementById(id).offsetTop -
+          0.14 * document.documentElement.clientWidth
+      );
       this.id = id;
     },
   },

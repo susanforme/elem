@@ -5,6 +5,7 @@ const detail = {
     rst: {},
     comments: {},
     status: 404,
+    shoppingCart: [],
   },
   mutations: {
     initMenu(state, data) {
@@ -18,6 +19,9 @@ const detail = {
     },
     changeStatus(state, status) {
       state.status = status;
+    },
+    pushShoppingCart(state, data) {
+      state.shoppingCart.push(data);
     },
   },
   actions: {
