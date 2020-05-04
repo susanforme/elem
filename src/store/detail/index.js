@@ -23,6 +23,9 @@ const detail = {
     pushShoppingCart(state, data) {
       state.shoppingCart.push(data);
     },
+    deleteShoppingCart(state, index) {
+      state.shoppingCart.splice(index, 1);
+    },
   },
   actions: {
     initMenu({ commit }, payload) {
