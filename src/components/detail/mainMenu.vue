@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div ref="menuCategroy">
     <div class="main-menu">
-      <menu-category :category="category"></menu-category>
-      <scroll-menu></scroll-menu>
+      <menu-category :category="category" :isFixed="isFixed"></menu-category>
+      <scroll-menu :isFixed="isFixed" :menu="mainMenu"></scroll-menu>
     </div>
   </div>
 </template>
@@ -10,6 +10,8 @@
 <script>
 import menuCategory from './menuCategroy';
 import scrollMenu from './scrollMenu';
+import { mapState } from 'vuex';
+
 export default {
   props: {
     menu: {
@@ -19,9 +21,10 @@ export default {
       },
     },
   },
-  components: {
-    menuCategory,
-    scrollMenu,
+  data() {
+    return {
+      top: 0,
+    };
   },
   computed: {
     category() {
@@ -33,6 +36,28 @@ export default {
         return { id, name };
       });
     },
+    mainMenu() {
+      if (this.menu.length <= 1) {
+        return this.menu;
+      }
+      return this.menu.slice(1);
+    },
+    ...mapState('home', ['currentPosition']),
+    isFixed() {
+      if (this.top !== 0 && this.currentPosition > this.top) {
+        return true;
+      }
+      return false;
+    },
+  },
+  mounted() {
+    this.top =
+      this.$refs['menuCategroy'].offsetTop -
+      0.14 * document.documentElement.clientWidth;
+  },
+  components: {
+    menuCategory,
+    scrollMenu,
   },
 };
 </script>

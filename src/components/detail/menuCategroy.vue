@@ -1,6 +1,6 @@
 <template>
   <div class="fa">
-    <div class="category" ref="menuCategroy" :class="{ fixed: isFixed }">
+    <div class="category" :class="{ fixed: isFixed }">
       <a
         :href="'#' + item.id"
         class="go"
@@ -16,8 +16,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-//在isfixed为true的时候用个data缓存true
 export default {
   props: {
     category: {
@@ -26,12 +24,14 @@ export default {
         return [{}];
       },
     },
+    isFixed: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
       id: 0,
-      top: 0,
-      wasItRight: false,
     };
   },
   computed: {
@@ -44,31 +44,11 @@ export default {
       }
       return this.category[0].id;
     },
-    ...mapState('home', ['currentPosition']),
-    isFixed() {
-      if (this.top !== 0 && this.currentPosition > this.top) {
-        return true;
-      }
-      return false;
-    },
   },
   methods: {
     goOther(id) {
       this.id = id;
     },
-  },
-  mounted() {
-    this.top =
-      this.$refs['menuCategroy'].offsetTop -
-      0.14 * document.documentElement.clientWidth;
-  },
-  watch: {
-    isFixed() {
-      if (this.isFixed) {
-        this.wasItRight = true;
-      }
-    },
-    immediate: true,
   },
 };
 </script>
