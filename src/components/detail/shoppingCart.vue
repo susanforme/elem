@@ -52,6 +52,7 @@ export default {
   },
   computed: {
     ...mapState('detail', ['shoppingCart']),
+    ...mapState(['isLogin']),
     hasCommodity() {
       if (this.shoppingCart.length > 0) {
         return true;
@@ -99,6 +100,11 @@ export default {
         this.isShowMask = false;
       }
     },
+  },
+  created() {
+    if (!this.isLogin) {
+      this.$router.push({ path: '/user/login', query: { from: 'location' } });
+    }
   },
 };
 </script>
