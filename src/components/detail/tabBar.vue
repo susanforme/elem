@@ -82,11 +82,11 @@ export default {
 }
 .position {
   .tabbar();
-  // border: none;
 }
 .fixed {
   position: fixed;
   top: 0;
   background-color: white;
+  z-index: 3;
 }
 </style>

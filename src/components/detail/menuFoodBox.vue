@@ -10,7 +10,7 @@
       </p>
       <p class="bottom">$ {{ food.origin_price }}</p>
       <p class="right">
-        <embed src="~@/assets/img/add.svg" type="image/svg+xml" />
+        <img src="~@/assets/img/add.svg" alt="" />
       </p>
     </div>
   </div>
@@ -63,6 +63,13 @@ export default {
       bottom: 0;
       font-size: 14px;
       color: rgb(255, 83, 57);
+    }
+    > p.right {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 6vw;
+      height: 6vw;
     }
   }
 }
