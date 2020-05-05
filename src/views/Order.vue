@@ -60,7 +60,7 @@ export default {
     height: 60vh;
     flex-direction: column;
     > .tips {
-      font-size: 20px;
+      font-size: 1.0666666666666667rem;
       font-weight: 700;
       margin-top: 3vw;
       color: @gray;
@@ -71,7 +71,7 @@ export default {
       padding: 2 * @padding @padding;
       background-color: white;
       display: flex;
-      font-size: 12px;
+      font-size: 0.64rem;
       position: relative;
       > .img {
         flex: 1;
@@ -86,7 +86,7 @@ export default {
         > .first {
           display: flex;
           height: 10vw;
-          font-size: 16px;
+          font-size: 0.8533333333333334rem;
           width: 40%;
           > .name {
             width: 100%;
@@ -97,7 +97,7 @@ export default {
           > .right {
             right: @padding;
             position: absolute;
-            font-size: 14px;
+            font-size: 0.7466666666666667rem;
             color: @gray;
           }
         }
@@ -105,14 +105,14 @@ export default {
           position: relative;
           height: 8vw;
           line-height: 8vw;
-          border-top: 1px solid rgba(219, 219, 219, 0.205);
+          border-top: 0.05333333333333334rem solid rgba(219, 219, 219, 0.205);
           > .right {
             position: absolute;
             right: @padding;
             top: 0;
             font-weight: 700;
             color: black;
-            font-size: 16px;
+            font-size: 0.8533333333333334rem;
           }
         }
       }

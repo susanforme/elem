@@ -41,7 +41,7 @@ export default {
     text-align: center;
     float: right;
     height: 12vw;
-    font-size: 17px;
+    font-size: 0.9066666666666666rem;
   }
 }
 </style>

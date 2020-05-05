@@ -78,7 +78,7 @@ export default {
   padding: @padding;
   padding-top: 2 * @padding;
   color: white;
-  font-size: 15px;
+  font-size: 0.8rem;
   > .head {
     > p {
       padding: 0.5 * @padding;
@@ -88,7 +88,7 @@ export default {
     }
     > .address {
       color: white;
-      font-size: 22px;
+      font-size: 1.1733333333333333rem;
       font-weight: 700;
     }
     > .msg {
@@ -100,7 +100,7 @@ export default {
     background-color: white;
     color: rgb(88, 88, 88);
     padding: @padding 3 * @padding;
-    font-size: 15px;
+    font-size: 0.8rem;
     > .box {
       height: 11.5vw;
       line-height: 11.5vw;
@@ -113,7 +113,7 @@ export default {
       }
     }
     > .box:first-child {
-      border-bottom: 1px solid rgba(219, 219, 219, 0.205);
+      border-bottom: 0.05333333333333334rem solid rgba(219, 219, 219, 0.205);
     }
   }
 }

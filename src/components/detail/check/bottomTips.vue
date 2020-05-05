@@ -35,17 +35,17 @@ export default {};
   > .big-box {
     background-color: white;
     padding: @padding 2.6 * @padding;
-    font-size: 14px;
+    font-size: 0.7466666666666667rem;
     > .title {
       padding-bottom: @padding;
-      font-size: 17px;
+      font-size: 0.9066666666666666rem;
       font-weight: 700;
       height: 10vw;
       line-height: 10vw;
     }
     > .box {
       @height: 12vw;
-      border-bottom: 1px solid rgba(219, 219, 219, 0.205);
+      border-bottom: 0.05333333333333334rem solid rgba(219, 219, 219, 0.205);
       position: relative;
       height: @height;
       line-height: @height;
@@ -55,11 +55,11 @@ export default {};
         right: 0;
         > .one {
           margin-right: 15vw;
-          font-size: 12px;
+          font-size: 0.64rem;
           color: @gray;
         }
         > .price {
-          font-size: 12px;
+          font-size: 0.64rem;
           color: rgb(187, 183, 183);
         }
       }

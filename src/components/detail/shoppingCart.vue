@@ -150,7 +150,7 @@ export default {
       width: 4vw;
       height: 4vw;
       text-align: center;
-      font-size: 12px;
+      font-size: 0.64rem;
       background-color: tomato;
       border-radius: 50%;
     }
@@ -178,10 +178,10 @@ export default {
     position: absolute;
     top: 3vw;
     left: 23vw;
-    font-size: 14px;
+    font-size: 0.7466666666666667rem;
     color: rgb(148, 148, 148);
     > .total-price {
-      font-size: 16px;
+      font-size: 0.8533333333333334rem;
       font-weight: 700;
       color: white;
     }
@@ -190,7 +190,7 @@ export default {
     position: absolute;
     top: 2vw;
     right: 8vw;
-    font-size: 15px;
+    font-size: 0.8rem;
     font-weight: 700;
   }
   // 激活后样式
@@ -210,7 +210,7 @@ export default {
   bottom: 11.5vw;
   width: 100%;
   transition: all 0.3s ease-in;
-  font-size: 16px;
+  font-size: 0.8533333333333334rem;
   height: 0;
   opacity: 0;
   > div {
@@ -240,7 +240,7 @@ export default {
         margin-right: 5vw;
         color: #ff5339;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 0.8533333333333334rem;
       }
       > img {
         width: 6vw;

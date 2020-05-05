@@ -67,17 +67,17 @@ export default {
   > .big-box {
     background-color: white;
     padding: @padding 2.6 * @padding;
-    font-size: 14px;
+    font-size: 0.7466666666666667rem;
     > .title {
       padding-bottom: @padding;
-      font-size: 17px;
+      font-size: 0.9066666666666666rem;
       font-weight: 700;
       height: 10vw;
       line-height: 10vw;
     }
     > .box {
       @height: 18vw;
-      border-top: 1px solid rgba(219, 219, 219, 0.205);
+      border-top: 0.05333333333333334rem solid rgba(219, 219, 219, 0.205);
       position: relative;
       height: @height;
       display: flex;
@@ -88,11 +88,11 @@ export default {
         right: 0;
         > .one {
           margin-right: 15vw;
-          font-size: 12px;
+          font-size: 0.64rem;
           color: @gray;
         }
         > .price {
-          font-size: 16px;
+          font-size: 0.8533333333333334rem;
           color: @gray;
         }
       }
@@ -102,7 +102,7 @@ export default {
       }
       > .name {
         margin-left: 3vw;
-        font-size: 13px;
+        font-size: 0.6933333333333334rem;
       }
     }
     > .pack {
