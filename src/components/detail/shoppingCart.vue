@@ -52,7 +52,7 @@ export default {
   },
   computed: {
     ...mapState('detail', ['shoppingCart']),
-    ...mapState(['isLogin']),
+    ...mapState(['isLogin', 'address']),
     hasCommodity() {
       if (this.shoppingCart.length > 0) {
         return true;
@@ -82,7 +82,10 @@ export default {
       }
     },
     goSettling() {
-      console.log('this is settasdasd');
+      if (this.address.trim()) {
+        return this.$router.push('/detail/check');
+      }
+      return this.$router.push('/home/location');
     },
     cancelMask() {
       this.$refs['top'].style = '';
