@@ -3,12 +3,13 @@
 ## 技术栈
 
 - 前端
-  + vue
-  + vuex
-  + vue-router
+  - vue
+  - vuex
+  - vue-router
+  - axios
 
-+ 后端
-  + express
+* 后端
+  - express
 
 ## 使用
 
