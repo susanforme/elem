@@ -14,6 +14,7 @@ export default new Vuex.Store({
     //选择的地址
     address: '',
     name: '',
+    order: [],
   },
   mutations: {
     loginMsg(state, data) {
@@ -31,6 +32,9 @@ export default new Vuex.Store({
     },
     logOut(state) {
       state.isLogin = false;
+    },
+    submitOrder(state, data) {
+      state.order.push(...data);
     },
   },
   actions: {

@@ -1,7 +1,7 @@
 <template>
   <div class="pay">
     <span class="price">${{ totalPrice }}</span>
-    <div class="right">
+    <div class="right" @click="pay">
       去支付
     </div>
   </div>
@@ -13,7 +13,12 @@ export default {
     totalPrice: {
       type: Number,
     },
+    pay: {
+      type: Function,
+      required: true,
+    },
   },
+  methods: {},
 };
 </script>
 

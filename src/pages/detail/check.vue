@@ -15,7 +15,7 @@
     <check-msg v-bind="{ address, phoneNum, name }"></check-msg>
     <shop-list v-bind="{ busineName, shoppingCart, totalPrice }"></shop-list>
     <bottom-list></bottom-list>
-    <go-pay v-bind="{ totalPrice }"></go-pay>
+    <go-pay v-bind="{ totalPrice, pay }"></go-pay>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ import checkMsg from '@/components/detail/check/checkMsg';
 import shopList from '@/components/detail/check/shopList';
 import bottomList from '@/components/detail/check/bottomTips';
 import goPay from '@/components/detail/check/goPay';
-import { mapState } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 export default {
   name: 'check',
   components: {
@@ -48,6 +48,20 @@ export default {
       }
       return 0;
     },
+  },
+  methods: {
+    ...mapMutations(['submitOrder']),
+    ...mapMutations('detail', ['clearShoppingCart']),
+    pay() {
+      this.submitOrder(this.shoppingCart);
+      this.clearShoppingCart();
+      this.$router.push('/order');
+    },
+  },
+  created() {
+    if (this.shoppingCart.length === 0) {
+      this.$router.back();
+    }
   },
 };
 </script>

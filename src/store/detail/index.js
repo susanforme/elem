@@ -28,6 +28,9 @@ const detail = {
     deleteShoppingCart(state, index) {
       state.shoppingCart.splice(index, 1);
     },
+    clearShoppingCart(state) {
+      state.shoppingCart = [];
+    },
   },
   actions: {
     initMenu({ commit }, payload) {
