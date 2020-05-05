@@ -40,6 +40,14 @@ Vue.use(animated);
 Vue.config.productionTip = false;
 //挂载图片处理函数
 Vue.prototype.detailImgSrc = detailImgSrc;
+router.beforeEach((to, from, next) => {
+  if (to.name) {
+    document.title = to.name;
+  } else {
+    document.title = '饿了么';
+  }
+  next();
+});
 new Vue({
   router,
   store,

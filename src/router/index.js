@@ -15,34 +15,34 @@ const routes = [
     children: [
       {
         path: '/',
-        name: 'homePage',
+        name: '首页',
         component: homPage,
       },
       {
         path: 'location',
-        name: 'location',
+        name: '选择收货地址',
         component: () => import('@/pages/home/location'),
       },
       {
         path: 'search',
-        name: 'search',
+        name: '搜索',
         component: () => import('@/pages/home/search'),
       },
       {
         path: 'recommend',
-        name: 'recommend',
+        name: '推荐',
         component: () => import('@/pages/home/recommend'),
       },
     ],
   },
   {
     path: '/discover',
-    name: 'discover',
+    name: '探索',
     component: () => import('@/views/Discover'),
   },
   {
     path: '/order',
-    name: 'Order',
+    name: '订单',
     component: () => import('@/views/Order'),
   },
   {
@@ -51,18 +51,22 @@ const routes = [
     children: [
       {
         path: '/',
+        name: '个人信息',
         component: () => import('@/pages/user/user'),
       },
       {
         path: 'service',
+        name: '服务条款',
         component: () => import('@/pages/user/service'),
       },
       {
         path: 'login',
+        name: '登录/注册',
         component: () => import('@/pages/user/login'),
       },
       {
         path: 'profile',
+        name: '账户信息',
         component: () => import('@/pages/user/profile'),
       },
     ],
@@ -77,6 +81,7 @@ const routes = [
       },
       {
         path: 'check',
+        name: '确认订单',
         component: () => import('@/pages/detail/check'),
       },
     ],
