@@ -13,7 +13,9 @@
       </template>
     </back-navigation>
     <check-msg v-bind="{ address, phoneNum, name }"></check-msg>
-    <shop-list v-bind="{ busineName, shoppingCart }"></shop-list>
+    <shop-list v-bind="{ busineName, shoppingCart, totalPrice }"></shop-list>
+    <bottom-list></bottom-list>
+    <go-pay v-bind="{ totalPrice }"></go-pay>
   </div>
 </template>
 
@@ -22,6 +24,8 @@
 import backNavigation from '@/components/backNavigation';
 import checkMsg from '@/components/detail/check/checkMsg';
 import shopList from '@/components/detail/check/shopList';
+import bottomList from '@/components/detail/check/bottomTips';
+import goPay from '@/components/detail/check/goPay';
 import { mapState } from 'vuex';
 export default {
   name: 'check',
@@ -29,10 +33,21 @@ export default {
     backNavigation,
     checkMsg,
     shopList,
+    bottomList,
+    goPay,
   },
   computed: {
     ...mapState(['address', 'phoneNum', 'name']),
     ...mapState('detail', ['shoppingCart', 'busineName']),
+    totalPrice() {
+      if (this.shoppingCart.length > 0) {
+        const result = this.shoppingCart.reduce((pre, cur) => {
+          return pre + cur.lowest_price;
+        }, 0);
+        return result + this.shoppingCart.length;
+      }
+      return 0;
+    },
   },
 };
 </script>
