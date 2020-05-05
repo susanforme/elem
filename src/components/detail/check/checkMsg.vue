@@ -4,7 +4,7 @@
       <p class="title">
         订单配送至
       </p>
-      <p class="address">
+      <p class="address" @click="changeAddress">
         {{ address }}
         <font-awesome-icon icon="angle-right" />
       </p>
@@ -16,6 +16,20 @@
           {{ phoneNum }}
         </span>
       </p>
+    </div>
+    <div class="delivery">
+      <div class="box">
+        <p class="left">送达时间</p>
+        <p class="right">尽快送达({{ time }}送达)</p>
+      </div>
+      <div class="box">
+        <p class="left">
+          支付方式
+        </p>
+        <p class="right">
+          在线支付
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -35,6 +49,25 @@ export default {
       type: String,
       default: '',
     },
+  },
+  data() {
+    return {
+      time: '',
+    };
+  },
+  methods: {
+    changeAddress() {
+      this.$router.push('/home/location');
+    },
+  },
+  created() {
+    const date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let randomMinuts = Math.round(Math.random() * 20) + 20;
+    hours += Math.floor((randomMinuts + minutes) / 60);
+    minutes = (minutes + randomMinuts) % 60;
+    this.time = `${hours}:${minutes}`;
   },
 };
 </script>
@@ -56,6 +89,30 @@ export default {
       color: white;
       font-size: 22px;
       font-weight: 700;
+    }
+    > .msg {
+      color: hsla(0, 0%, 100%, 0.952);
+      padding-bottom: @padding;
+    }
+  }
+  > .delivery {
+    background-color: white;
+    color: rgb(88, 88, 88);
+    padding: @padding 3 * @padding;
+    font-size: 15px;
+    > .box {
+      height: 11.5vw;
+      line-height: 11.5vw;
+      position: relative;
+      > .right {
+        position: absolute;
+        right: 3 * @padding;
+        top: 0;
+        color: @primary;
+      }
+    }
+    > .box:first-child {
+      border-bottom: 1px solid rgba(219, 219, 219, 0.205);
     }
   }
 }

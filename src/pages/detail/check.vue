@@ -13,6 +13,7 @@
       </template>
     </back-navigation>
     <check-msg v-bind="{ address, phoneNum, name }"></check-msg>
+    <shop-list></shop-list>
   </div>
 </template>
 
@@ -20,14 +21,18 @@
 //检测购物车是否为空,为空返回首页
 import backNavigation from '@/components/backNavigation';
 import checkMsg from '@/components/detail/check/checkMsg';
+import shopList from '@/components/detail/check/shopList';
 import { mapState } from 'vuex';
 export default {
+  name: 'check',
   components: {
     backNavigation,
     checkMsg,
+    shopList,
   },
   computed: {
     ...mapState(['address', 'phoneNum', 'name']),
+    ...mapState('detail', ['shoppingCart']),
   },
 };
 </script>
