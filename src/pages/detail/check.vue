@@ -38,7 +38,7 @@ export default {
   },
   computed: {
     ...mapState(['address', 'phoneNum', 'name']),
-    ...mapState('detail', ['shoppingCart', 'busineName']),
+    ...mapState('detail', ['shoppingCart', 'busineName', 'rst']),
     totalPrice() {
       if (this.shoppingCart.length > 0) {
         const result = this.shoppingCart.reduce((pre, cur) => {
@@ -53,7 +53,12 @@ export default {
     ...mapMutations(['submitOrder']),
     ...mapMutations('detail', ['clearShoppingCart']),
     pay() {
-      this.submitOrder(this.shoppingCart);
+      this.submitOrder({
+        shoppingCart: this.shoppingCart,
+        name: this.rst.name,
+        image_path: this.rst.image_path,
+        totalPrice: this.totalPrice,
+      });
       this.clearShoppingCart();
       this.$router.push('/order');
     },

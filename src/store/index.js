@@ -34,7 +34,7 @@ export default new Vuex.Store({
       state.isLogin = false;
     },
     submitOrder(state, data) {
-      state.order.push(...data);
+      state.order.push(data);
     },
   },
   actions: {
