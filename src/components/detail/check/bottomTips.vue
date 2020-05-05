@@ -22,6 +22,7 @@
         </div>
       </div>
     </div>
+    <div class="position"></div>
   </div>
 </template>
 
@@ -72,5 +73,8 @@ export default {};
       }
     }
   }
+}
+.position {
+  height: 12vw;
 }
 </style>
