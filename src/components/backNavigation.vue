@@ -46,6 +46,7 @@ export default {
     line-height: 10vw;
     display: flex;
     align-items: center;
+    font-size: 16px;
     svg {
       font-size: 1.6rem;
       position: absolute;

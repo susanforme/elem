@@ -17,7 +17,7 @@
       class="position"
       v-for="(location, index) in locationList"
       :key="index"
-      @click="goHome(location.address)"
+      @click="goHome(location)"
     >
       <p class="name-phone">
         <span class="name">
@@ -64,9 +64,9 @@ export default {
   methods: {
     ...mapActions('home/location', ['initLocaionList', 'changeStatus']),
     ...mapMutations(['changeAddress']),
-    goHome(address) {
-      this.changeAddress(address);
-      this.$router.push('/home');
+    goHome(location) {
+      this.changeAddress(location);
+      this.$router.back();
     },
   },
 };

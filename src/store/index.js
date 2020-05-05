@@ -13,6 +13,7 @@ export default new Vuex.Store({
     phoneNum: '',
     //选择的地址
     address: '',
+    name: '',
   },
   mutations: {
     loginMsg(state, data) {
@@ -23,8 +24,10 @@ export default new Vuex.Store({
     changeLoginStatus(state, status) {
       state.isLogin = status;
     },
-    changeAddress(state, data) {
-      state.address = data;
+    changeAddress(state, location) {
+      const { address, name } = location;
+      state.address = address;
+      state.name = name;
     },
     logOut(state) {
       state.isLogin = false;
