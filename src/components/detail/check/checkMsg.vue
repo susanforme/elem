@@ -84,6 +84,7 @@ export default {
       padding: 0.5 * @padding;
       color: hsla(0, 0%, 100%, 0.8);
       font-weight: 400;
+      padding-left: @padding;
     }
     > .address {
       color: white;

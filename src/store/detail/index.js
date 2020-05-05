@@ -6,6 +6,7 @@ const detail = {
     comments: {},
     status: 404,
     shoppingCart: [],
+    busineName: '',
   },
   mutations: {
     initMenu(state, data) {
@@ -13,6 +14,7 @@ const detail = {
     },
     initRst(state, data) {
       state.rst = data;
+      state.busineName = data.name;
     },
     initComments(state, data) {
       state.comments = data;

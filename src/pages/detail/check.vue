@@ -13,7 +13,7 @@
       </template>
     </back-navigation>
     <check-msg v-bind="{ address, phoneNum, name }"></check-msg>
-    <shop-list></shop-list>
+    <shop-list v-bind="{ busineName, shoppingCart }"></shop-list>
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     ...mapState(['address', 'phoneNum', 'name']),
-    ...mapState('detail', ['shoppingCart']),
+    ...mapState('detail', ['shoppingCart', 'busineName']),
   },
 };
 </script>
