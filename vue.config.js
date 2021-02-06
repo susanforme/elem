@@ -14,4 +14,16 @@ module.exports = {
     },
   },
   productionSourceMap: false,
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:5050',
+        ws: false,
+        changeOrigin: true, //允许跨域
+        pathRewrite: {
+          '^/api': '/',
+        },
+      },
+    },
+  },
 };
